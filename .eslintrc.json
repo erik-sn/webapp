@@ -1,8 +1,0 @@
-{
-    "extends": "airbnb",
-
-    "rules": {
-        // Override any settings from the airbnb configuration
-        "react/prop-types": 0
-    }
-}

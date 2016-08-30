@@ -4,9 +4,7 @@ var webpack = require('webpack');
 require('es6-promise').polyfill();
 
 module.exports = {
-  devtool: process.env.NODE_ENV === 'production' ?
-    'source-map' :
-    'inline-source-map',
+  devtool: 'eval',
   entry: [
     'webpack-dev-server/client?http://localhost:3000',
     'webpack/hot/only-dev-server',
@@ -26,7 +24,12 @@ module.exports = {
     }),
   ],
   module: {
-    loaders: [{
+    loaders: [
+    {
+      test: /\.scss$/,
+      loaders: ['style', 'css', 'sass'],
+    },
+    {
       test: /\.js$/,
       loader: ['react-hot', 'babel'],
       include: path.join(__dirname, 'src'),
@@ -34,10 +37,6 @@ module.exports = {
     { test: /\.tsx?$/,
       loaders: ['react-hot', 'babel', 'ts-loader'],
       include: path.join(__dirname, 'src'),
-    },
-    {
-      test: /\.scss$/,
-      loaders: ['style', 'css', 'sass'],
     },
     ],
   },

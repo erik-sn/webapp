@@ -1,6 +1,9 @@
 {
   "globalDependencies": {
+    "express": "registry:dt/express#4.0.0+20160708185218",
+    "node": "registry:dt/node#6.0.0+20160830141956",
     "react": "registry:dt/react#0.14.0+20160817201227",
-    "react-dom": "registry:dt/react-dom#0.14.0+20160412154040"
+    "react-dom": "registry:dt/react-dom#0.14.0+20160412154040",
+    "require": "registry:dt/require#2.1.20+20160316155526"
   }
 }

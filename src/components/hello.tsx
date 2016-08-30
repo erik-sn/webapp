@@ -1,11 +1,15 @@
-import * as React from 'react';
+if (process.env.BROWSER) {
+  require("../sass/style.scss");
+}
 
-export interface HelloProps { user: string }
+import * as React from "react";
 
-export class Hello extends React.Component<HelloProps, {}> {
-  render() {
+export interface IHelloProps { user: string; }
+
+export class Hello extends React.Component<IHelloProps, {}> {
+  public render() {
     return (
-      <div className="hello-container">asdfasdf from {this.props.user}!</div>
+      <div className="hello-container">Hello from {this.props.user}!</div>
     );
   }
 
