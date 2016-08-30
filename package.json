@@ -1,7 +1,7 @@
 {
   "name": "react-boilerplate",
   "version": "1.0.0",
-  "description": "React Boilerplate with support for Redux, Hot Reloading, Routing, Isomorphic rendering, ESLint and SASS",
+  "description": "React Boilerplate with support for Redux, TypeScript, Hot Reloading, Routing, Isomorphic rendering, ESLint and SASS",
   "main": "index.js",
   "repository": "",
   "scripts": {
