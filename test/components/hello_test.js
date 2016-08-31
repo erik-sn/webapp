@@ -4,7 +4,6 @@ import { sRender } from '../test_helper';
 import sinon from 'sinon';
 
 import Hello from '../../src/components/hello';
-import World from '../../src/components/world';
 
 describe('Lets write tests!' , () => {
 
