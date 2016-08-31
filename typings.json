@@ -6,8 +6,11 @@
     "node": "registry:dt/node#6.0.0+20160830141956",
     "react": "registry:dt/react#0.14.0+20160817201227",
     "react-dom": "registry:dt/react-dom#0.14.0+20160412154040",
+    "react-redux": "registry:dt/react-redux#4.4.0+20160724070751",
     "react-router": "registry:dt/react-router#2.0.0+20160813233016",
     "react-router/history": "registry:dt/react-router/history#2.0.0+20160608102730",
+    "redux": "registry:dt/redux#3.5.2+20160703092728",
+    "redux-promise": "registry:dt/redux-promise#0.5.3+20160703120921",
     "require": "registry:dt/require#2.1.20+20160316155526",
     "serve-static": "registry:dt/serve-static#0.0.0+20160606155157"
   }

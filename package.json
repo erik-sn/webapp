@@ -52,6 +52,7 @@
     "react-redux": "^4.4.5",
     "react-router": "^2.7.0",
     "redux": "^3.5.2",
+    "redux-promise": "^0.5.3",
     "webpack": "^1.12.9"
   }
 }
