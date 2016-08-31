@@ -1,6 +1,8 @@
-import * as React from 'react';
-import * as ReactDOM from 'react-dom';
-import { Hello } from "./components/hello.tsx";
+import * as React from "react";
+import * as ReactDOM from "react-dom";
+import { Router, browserHistory } from "react-router";
 
-ReactDOM.render(<div><h1>Test4</h1><Hello user="test4" /></div>, 
-document.getElementById('react-container'));
+import router from "./routes.tsx";
+
+ReactDOM.render(<Router history={browserHistory}>{router}</Router>,
+document.getElementById("react-container"));
