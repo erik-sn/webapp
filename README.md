@@ -12,4 +12,4 @@ React/Redux boilerplate that includes the (optional) use of TypeScript
 - [Isomorphic/Server Side Rendering](http://nerds.airbnb.com/isomorphic-javascript-future-web-apps/)
 - [Mocha/Chai/Enzyme/Sinon Testing](https://mochajs.org/)
 - [SASS](http://sass-lang.com/)
-- [ESlint](http://eslint.org/)
+- [TSLint/TSLint-React](https://palantir.github.io/tslint/)
