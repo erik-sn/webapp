@@ -1,11 +1,14 @@
 {
   "globalDependencies": {
+    "chai": "registry:dt/chai#3.4.0+20160601211834",
+    "enzyme": "registry:dt/enzyme#2.4.1+20160709041153",
     "express": "registry:dt/express#4.0.0+20160708185218",
     "express-serve-static-core": "registry:dt/express-serve-static-core#4.0.0+20160829034835",
     "jsdom": "registry:dt/jsdom#2.0.0+20160316155526",
     "mime": "registry:dt/mime#0.0.0+20160316155526",
+    "mocha": "registry:dt/mocha#2.2.5+20160720003353",
     "node": "registry:dt/node#6.0.0+20160830141956",
-    "react": "registry:dt/react#0.14.0+20160817201227",
+    "react": "registry:dt/react#0.14.0+20160829191040",
     "react-dom": "registry:dt/react-dom#0.14.0+20160412154040",
     "react-redux": "registry:dt/react-redux#4.4.0+20160724070751",
     "react-router": "registry:dt/react-router#2.0.0+20160813233016",
@@ -13,6 +16,7 @@
     "redux": "registry:dt/redux#3.5.2+20160703092728",
     "redux-promise": "registry:dt/redux-promise#0.5.3+20160703120921",
     "require": "registry:dt/require#2.1.20+20160316155526",
-    "serve-static": "registry:dt/serve-static#0.0.0+20160606155157"
+    "serve-static": "registry:dt/serve-static#0.0.0+20160606155157",
+    "sinon": "registry:dt/sinon#1.16.0+20160517064723"
   }
 }
