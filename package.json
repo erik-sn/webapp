@@ -1,9 +1,9 @@
 {
   "name": "react-boilerplate",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "React Boilerplate with support for Redux, TypeScript, Hot Reloading, Routing, Isomorphic rendering, TSLint and SASS",
   "main": "index.tsx",
-  "repository": "",
+  "repository": "https://github.com/kiresuah/ReactTypeScript",
   "scripts": {
     "dev": "ts-node server.ts",
     "test:watch": "npm run test -- --watch",

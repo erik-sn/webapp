@@ -16,8 +16,6 @@ describe("Lets write tests!" , () => {
     };
     const state = {};
 
-    interface IParams { name: String; }
-
 
     beforeEach(() => {
       component = sRender(Hello, props, state);

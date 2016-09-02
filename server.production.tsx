@@ -42,7 +42,11 @@ app.use("*", (req: any, res: any) => {
       res.redirect(302, redirectLocation.pathname + redirectLocation.search);
     } else if (renderProps) {
       const createStoreWithMiddleware = applyMiddleware()(createStore);
-      const html = renderToString(<Provider store={createStoreWithMiddleware(reducers)} > <RouterContext { ...renderProps; } /></Provider >);
+      const html = renderToString(
+        <Provider store={createStoreWithMiddleware(reducers)} >
+          <RouterContext { ...renderProps } />
+        </Provider >
+      );
       res.status(200).send(renderFullPage(html));
     } else {
       res.status(404).send("Not found");

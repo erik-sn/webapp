@@ -18,9 +18,11 @@
     "react-router/history": "registry:dt/react-router/history#2.0.0+20160830150755",
     "redux": "registry:dt/redux#3.5.2+20160703092728",
     "redux-promise": "registry:dt/redux-promise#0.5.3+20160703120921",
+    "redux-thunk": "registry:dt/redux-thunk#2.1.0+20160703120921",
     "require": "registry:dt/require#2.1.20+20160316155526",
     "serve-static": "registry:dt/serve-static#0.0.0+20160606155157",
     "sinon": "registry:dt/sinon#1.16.0+20160517064723",
+    "source-map": "registry:dt/source-map#0.0.0+20160317120654",
     "uglify-js": "registry:dt/uglify-js#2.6.1+20160316155526",
     "webpack": "registry:dt/webpack#1.12.9+20160724112410"
   }

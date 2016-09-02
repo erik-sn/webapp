@@ -3,9 +3,9 @@ import * as ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import { Router, browserHistory } from "react-router";
 import { applyMiddleware, createStore } from "redux";
-import promise from "redux-promise";
+import * as promise from "redux-promse";
 
-import reducers from "./reducers/";
+import reducers from "./reducers/index.tsx";
 import router from "./routes.tsx";
 
 const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
