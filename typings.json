@@ -1,6 +1,7 @@
 {
   "globalDependencies": {
     "chai": "registry:dt/chai#3.4.0+20160601211834",
+    "compression": "registry:dt/compression#0.0.0+20160501162003",
     "enzyme": "registry:dt/enzyme#2.4.1+20160709041153",
     "express": "registry:dt/express#4.0.0+20160708185218",
     "express-serve-static-core": "registry:dt/express-serve-static-core#4.0.0+20160829034835",
@@ -8,6 +9,7 @@
     "jsdom": "registry:dt/jsdom#2.0.0+20160316155526",
     "mime": "registry:dt/mime#0.0.0+20160316155526",
     "mocha": "registry:dt/mocha#2.2.5+20160720003353",
+    "morgan": "registry:dt/morgan#1.7.0+20160524142355",
     "node": "registry:dt/node#6.0.0+20160831021119",
     "react": "registry:dt/react#0.14.0+20160829191040",
     "react-dom": "registry:dt/react-dom#0.14.0+20160412154040",
@@ -18,6 +20,8 @@
     "redux-promise": "registry:dt/redux-promise#0.5.3+20160703120921",
     "require": "registry:dt/require#2.1.20+20160316155526",
     "serve-static": "registry:dt/serve-static#0.0.0+20160606155157",
-    "sinon": "registry:dt/sinon#1.16.0+20160517064723"
+    "sinon": "registry:dt/sinon#1.16.0+20160517064723",
+    "uglify-js": "registry:dt/uglify-js#2.6.1+20160316155526",
+    "webpack": "registry:dt/webpack#1.12.9+20160724112410"
   }
 }

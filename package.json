@@ -1,15 +1,15 @@
 {
   "name": "react-boilerplate",
   "version": "1.0.0",
-  "description": "React Boilerplate with support for Redux, TypeScript, Hot Reloading, Routing, Isomorphic rendering, ESLint and SASS",
-  "main": "index.js",
+  "description": "React Boilerplate with support for Redux, TypeScript, Hot Reloading, Routing, Isomorphic rendering, TSLint and SASS",
+  "main": "index.tsx",
   "repository": "",
   "scripts": {
-    "dev": "node server.js",
+    "dev": "ts-node server.ts",
     "test:watch": "npm run test -- --watch",
     "test": "mocha --compilers ts:ts-node/register,tsx:ts-node/register,js:babel-core/register --require ./test/test_helper.tsx --recursive ./test",
-    "build": "webpack -p --config webpack.production.config.js --progress --profile --colors",
-    "start": "nodemon server.production.js --exec babel-node"
+    "build": "webpack -p --config webpack.production.config.ts --progress --profile --colors",
+    "start": "nodemon server.production.tsx --exec ts-node"
   },
   "author": "",
   "license": "ISC",
