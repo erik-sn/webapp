@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "node server.js",
     "test:watch": "npm run test -- --watch",
-    "test": "mocha --compilers js:babel-core/register,tsx:ts-node/register --require ./test/test_helper.js --recursive ./test",
+    "test": "mocha --compilers ts:ts-node/register,tsx:ts-node/register,js:babel-core/register --require ./test/test_helper.tsx --recursive ./test",
     "build": "webpack -p --config webpack.production.config.js --progress --profile --colors",
     "start": "nodemon server.production.js --exec babel-node"
   },

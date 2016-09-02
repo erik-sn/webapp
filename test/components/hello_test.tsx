@@ -1,19 +1,26 @@
 
 import { expect } from "chai";
-import sinon from "sinon";
-import { sRender } from "../test_helper.tsx";
+import * as sinon from "sinon";
 
 import Hello from "../../src/components/hello.tsx";
+import { sRender } from "../test_helper.tsx";
 
 describe("Lets write tests!" , () => {
 
   describe("Hello" , () => {
-    let component;
-    const props = {};
+    let component: any;
+    const props = {
+      params: {
+        name: "hello world",
+      },
+    };
     const state = {};
 
+    interface IParams { name: String; }
+
+
     beforeEach(() => {
-      component = sRender(Hello);
+      component = sRender(Hello, props, state);
     });
 
     it("renders something", () => {
