@@ -1,24 +1,23 @@
+import * as path from "path";
+import * as webpack from "webpack";
+require("es6-promise").polyfill();
 
-var path = require('path');
-var webpack = require('webpack');
-require('es6-promise').polyfill();
-
-module.exports = {
-  devtool: 'eval',
+export default module.exports = {
+  devtool: "eval",
   entry: [
-    'webpack-dev-server/client?http://localhost:3000',
-    'webpack/hot/only-dev-server',
-    './src/index.tsx',
+    "webpack-dev-server/client?http://localhost:3000",
+    "webpack/hot/only-dev-server",
+    "./src/index.tsx",
   ],
   output: {
-    path: path.join(__dirname, 'dist'),
-    filename: 'bundle.js',
-    publicPath: '/dist/',
+    filename: "bundle.js",
+    path: path.join(__dirname, "dist"),
+    publicPath: "/dist/",
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.DefinePlugin({
-      'process.env': {
+      "process.env": {
         BROWSER: JSON.stringify(true),
       },
     }),
@@ -26,17 +25,18 @@ module.exports = {
   module: {
     loaders: [
     {
+      loaders: ["style", "css", "sass"],
       test: /\.scss$/,
-      loaders: ['style', 'css', 'sass'],
     },
     {
+      include: path.join(__dirname, "src"),
+      loader: ["react-hot", "babel"],
       test: /\.js$/,
-      loader: ['react-hot', 'babel'],
-      include: path.join(__dirname, 'src'),
     },
-    { test: /\.tsx?$/,
-      loaders: ['react-hot', 'babel', 'ts-loader'],
-      include: path.join(__dirname, 'src'),
+    {
+      include: path.join(__dirname, "src"),
+      loaders: ["react-hot", "ts-loader"],
+      test: /\.tsx?$/,
     },
     ],
   },

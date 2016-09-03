@@ -19,8 +19,6 @@ class Application extends React.Component<{}, {}> {
 
 function mapStateToProps(state: any) {
   return {
-    hierarchy: state.appInfo.hierarchy,
-    user: state.user,
   };
 }
 

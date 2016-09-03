@@ -78,7 +78,7 @@ function renderFullPage(html: string) {
         <link rel="stylesheet" href="/static/bundle.min.css">
       </head>
       <body id="app-body">
-        <div class="react-container">${html}</div>
+        <div id="react-container">${html}</div>
       </body>
       <script src="/static/bundle.min.js"></script>
     </html>
