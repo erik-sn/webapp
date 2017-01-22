@@ -17,8 +17,8 @@ const configuration: webpack.Configuration = {
   ],
   output: {
     filename: 'bundle.js',
-    path: path.join(__dirname, 'dist'),
-    publicPath: '/dist/',
+    path: path.join(__dirname, '../dist'),
+    publicPath: '/static/',
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
@@ -37,9 +37,14 @@ const configuration: webpack.Configuration = {
         test: /\.scss$/,
       },
       {
-        include: path.join(__dirname, 'src'),
-        use: ['ts-loader'],
+        include: path.join(__dirname, '../src'),
+        use: ['awesome-typescript-loader'],
         test: /\.tsx$/,
+      },
+      {
+        include: path.join(__dirname, '../src'),
+        use: ['awesome-typescript-loader'],
+        test: /\.ts$/,
       },
       {
         test: /\.json$/,
