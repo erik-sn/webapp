@@ -4,13 +4,37 @@
   "description": "React Boilerplate with support for Redux, TypeScript, Hot Reloading, Routing, Isomorphic rendering, TSLint and SASS",
   "main": "index.tsx",
   "repository": "https://github.com/kiresuah/ReactTypeScript",
+  "jest": {
+    "testRegex": "/__tests__/.*\\.(ts|tsx|js)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "transform": {
+      "^.+\\.(ts|tsx)$": "<rootDir>/config/preprocessor.js"
+    },
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "helper.tsx"
+    ],
+    "verbose": false,
+    "collectCoverage": false,
+    "collectCoverageFrom": [
+      "src/actions/**/*.{ts,tsx}",
+      "src/components/**/*.{ts,tsx}",
+      "src/reducers/**/*.{ts,tsx}",
+      "src/constants/**/*.{ts,tsx}",
+      "src/utils/**/*.{ts,tsx}"
+    ]
+  },
   "scripts": {
     "dev": "ts-node ./config/server.ts",
     "test:watch": "npm run test -- --watch",
-    "test": "mocha --compilers ts:ts-node/register,tsx:ts-node/register --require ./test/test_helper.tsx --recursive ./test",
+    "test": "jest",
+    "coverage": "jest --coverage",
     "build": "webpack -p --config ./config/webpack.production.config.ts --progress --profile --colors",
-    "start": "nodemon ./config/server.production.tsx --exec ts-node",
-    "lint": "tslint ./src ./test --fix"
+    "start": "nodemon ./config/server.production.tsx --exec ts-node"
   },
   "author": "",
   "license": "ISC",
@@ -39,10 +63,14 @@
     "autoprefixer": "^6.6.1",
     "awesome-typescript-loader": "^3.0.0-beta.18",
     "chai": "^3.5.0",
+    "chai-immutable": "^1.6.0",
     "css-loader": "^0.26.1",
+    "dirty-chai": "^1.2.2",
     "enzyme": "^2.7.0",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.9.0",
+    "istanbul": "1.0.0-alpha.2",
+    "jest": "^18.1.0",
     "jsdom": "^9.9.1",
     "json-loader": "^0.5.4",
     "mocha": "^3.2.0",

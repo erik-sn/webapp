@@ -1,12 +1,11 @@
 /* tslint:disable:no-var-requires object-literal-sort-keys */
+import * as autoprefixer from 'autoprefixer';
 import * as promise from 'es6-promise';
+import * as ExtractTextPlugin from 'extract-text-webpack-plugin';
 import * as path from 'path';
 import * as webpack from 'webpack';
 
 const appconfig = require('../package.json');
-const autoprefixer = require('autoprefixer');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-
 promise.polyfill();
 
 module.exports = {

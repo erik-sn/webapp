@@ -1,10 +1,9 @@
 /* tslint:disable:no-var-requires object-literal-sort-keys */
+import * as autoprefixer from 'autoprefixer';
 import * as promise from 'es6-promise';
 import * as path from 'path';
 import * as webpack from 'webpack';
 
-
-const autoprefixer = require('autoprefixer');
 
 promise.polyfill();
 
