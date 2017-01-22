@@ -1,11 +1,13 @@
 import * as webpack from "webpack";
-const WebpackDevServer = require("webpack-dev-server");
-const config = require("./webpack.config.ts");
+import * as WebpackDevServer from "webpack-dev-server";
 
-new WebpackDevServer(webpack(config), {
+import configuration from "./webpack.1.config";
+
+
+new WebpackDevServer(webpack(configuration), {
   historyApiFallback: true,
   hot: true,  // enable hot reloading
-  publicPath: config.output.publicPath,
+  publicPath: configuration.output.publicPath,
 }).listen(3000, "localhost", (err: any, result: any) => {
   if (err) {
     return console.log(err);

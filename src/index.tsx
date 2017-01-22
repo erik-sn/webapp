@@ -1,17 +1,26 @@
-import * as React from "react";
-import * as ReactDOM from "react-dom";
-import { Provider } from "react-redux";
-import { Router, browserHistory } from "react-router";
-import { applyMiddleware, createStore } from "redux";
-import * as thunk from "redux-thunk";
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
+import { AppContainer } from 'react-hot-loader';
 
-import reducers from "./reducers/index.tsx";
-import router from "./routes.tsx";
+import App from './app';
 
-const createStoreWithMiddleware = applyMiddleware(thunk.default)(createStore);
-
+const rootEl = document.getElementById('app-container');
 ReactDOM.render(
-  <Provider store={createStoreWithMiddleware(reducers)}>
-    <Router history={browserHistory}>{router}</Router>
-  </Provider>,
-document.getElementById("react-container"));
+  <AppContainer>
+    <App />
+  </AppContainer>,
+  rootEl
+);
+
+declare var module: any; // silence TS error on module
+if (module.hot) {
+  module.hot.accept('./app', () => {
+    const NextApp = require('./app').default;
+    ReactDOM.render(
+      <AppContainer>
+         <NextApp />
+      </AppContainer>,
+      rootEl
+    );
+  });
+}

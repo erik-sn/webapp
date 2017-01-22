@@ -1,8 +1,8 @@
 import * as React from "react";
 import { IndexRoute, Route, Router  } from "react-router";
 
-import Application from "./components/application.tsx";
-import Hello from "./components/hello.tsx";
+import Application from "./components/application";
+import Hello from "./components/hello";
 
 const Routes = (
   <Router>

@@ -1,9 +1,9 @@
 import { mount, shallow } from "enzyme";
 import * as jsdom from "jsdom";
 import * as  React from "react";
-import  * as ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import { createStore } from "redux";
+
 import reducers from "../src/reducers/";
 
 declare const global: any;
