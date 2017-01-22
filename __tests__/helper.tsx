@@ -1,6 +1,5 @@
 // tslint:disable:no-string-literal
 import * as chai from 'chai';
-import * as chaiImmutable from 'chai-immutable';
 import * as dirtyChai from 'dirty-chai';
 import * as jsdom from 'jsdom';
 import * as  React from 'react';
@@ -14,9 +13,8 @@ class Dictionary<TValue> {
     [index: string]: TValue;
 }
 
-// improve
+// improve chai assertions to satisfy linting
 chai.use(dirtyChai);
-chai.use(chaiImmutable);
 
 
 // jsdom configuration

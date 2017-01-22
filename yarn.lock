@@ -102,12 +102,6 @@
   version "15.0.1"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-15.0.1.tgz#af128796b3205cc5c8d22640f8a5444187c30ab7"
 
-"@types/redux-immutable@^3.0.32":
-  version "3.0.32"
-  resolved "https://registry.yarnpkg.com/@types/redux-immutable/-/redux-immutable-3.0.32.tgz#a365ab4684bf77e8961e05902239a267569be407"
-  dependencies:
-    redux "^3.6.0"
-
 "@types/redux-promise@^0.5.24":
   version "0.5.24"
   resolved "https://registry.yarnpkg.com/@types/redux-promise/-/redux-promise-0.5.24.tgz#8f7b31ab3100888592d229483339a7ee408fb06d"
@@ -731,10 +725,6 @@ center-align@^0.1.1:
   dependencies:
     align-text "^0.1.3"
     lazy-cache "^1.0.3"
-
-chai-immutable@^1.6.0:
-  version "1.6.0"
-  resolved "https://registry.yarnpkg.com/chai-immutable/-/chai-immutable-1.6.0.tgz#9ec00bdd67948b13b20fcbb89cbf4af2ce6f9247"
 
 chai@^3.5.0:
   version "3.5.0"
@@ -1663,10 +1653,6 @@ flatten@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/flatten/-/flatten-1.0.2.tgz#dae46a9d78fbe25292258cc1e780a41d95c03782"
 
-flow-runtime@0.0.6:
-  version "0.0.6"
-  resolved "https://registry.yarnpkg.com/flow-runtime/-/flow-runtime-0.0.6.tgz#570aeab33dca9d2357d137c0b0a2e141b7342410"
-
 flux-standard-action@^0.6.1:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/flux-standard-action/-/flux-standard-action-0.6.1.tgz#6f34211b94834ea1c3cc30f4e7afad3d0fbf71a2"
@@ -2075,10 +2061,6 @@ ieee754@^1.1.4:
 ignore-by-default@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/ignore-by-default/-/ignore-by-default-1.0.1.tgz#48ca6d72f6c6a3af00a9ad4ae6876be3889e2b09"
-
-immutable@^3.8.1:
-  version "3.8.1"
-  resolved "https://registry.yarnpkg.com/immutable/-/immutable-3.8.1.tgz#200807f11ab0f72710ea485542de088075f68cd2"
 
 imurmurhash@^0.1.4:
   version "0.1.4"
@@ -4223,13 +4205,6 @@ reduce-function-call@^1.0.1:
   resolved "https://registry.yarnpkg.com/reduce-function-call/-/reduce-function-call-1.0.2.tgz#5a200bf92e0e37751752fe45b0ab330fd4b6be99"
   dependencies:
     balanced-match "^0.4.2"
-
-redux-immutable@^3.0.10:
-  version "3.0.10"
-  resolved "https://registry.yarnpkg.com/redux-immutable/-/redux-immutable-3.0.10.tgz#160c9ebfe59cf3f2fd4ee9baf0017cd56fe54649"
-  dependencies:
-    flow-runtime "0.0.6"
-    immutable "^3.8.1"
 
 redux-promise:
   version "0.5.3"

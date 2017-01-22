@@ -1,7 +1,7 @@
 {
   "name": "tsreact",
   "version": "1.2.0",
-  "description": "React Boilerplate with support for Redux, TypeScript, ImmutableJS, Hot Reloading, Routing, Isomorphic rendering, TSLint, SASS, Testing",
+  "description": "React Boilerplate with support for Redux, TypeScript, Hot Reloading, Routing, Isomorphic rendering, TSLint, SASS, Testing",
   "main": "index.tsx",
   "repository": "https://github.com/kiresuah/ReactTypeScript",
   "scripts": {
@@ -30,7 +30,6 @@
     "@types/react-router": "^2.0.45",
     "@types/react-router-redux": "^4.0.38",
     "@types/redux": "^3.6.0",
-    "@types/redux-immutable": "^3.0.32",
     "@types/redux-promise": "^0.5.24",
     "@types/redux-thunk": "^2.1.0",
     "@types/sinon": "^1.16.34",
@@ -40,7 +39,6 @@
     "autoprefixer": "^6.6.1",
     "awesome-typescript-loader": "^3.0.0-beta.18",
     "chai": "^3.5.0",
-    "chai-immutable": "^1.6.0",
     "css-loader": "^0.26.1",
     "dirty-chai": "^1.2.2",
     "enzyme": "^2.7.0",
@@ -71,7 +69,6 @@
     "compression": "^1.6.2",
     "es6-promise": "^4.0.5",
     "express": "^4.14.0",
-    "immutable": "^3.8.1",
     "morgan": "^1.7.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
@@ -79,7 +76,6 @@
     "react-router": "^3.0.2",
     "react-router-redux": "^4.0.7",
     "redux": "^3.6.0",
-    "redux-immutable": "^3.0.10",
     "redux-promise": "^0.5.3",
     "redux-thunk": "^2.2.0"
   }
