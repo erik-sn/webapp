@@ -7,7 +7,12 @@ import * as  React from 'react';
 import { Provider } from 'react-redux';
 import { applyMiddleware, createStore } from 'redux';
 
-import reducers from '../src/reducers/';
+import reducers from '../src/reducers/root_reducer';
+
+
+class Dictionary<TValue> {
+    [index: string]: TValue;
+}
 
 // improve
 chai.use(dirtyChai);
@@ -36,10 +41,6 @@ export function reduxWrap(component: JSX.Element): JSX.Element {
   );
 }
 
-
-class Dictionary<TValue> {
-    [index: string]: TValue;
-}
 
 function storageMock(): Object {
   const storage = new Dictionary();

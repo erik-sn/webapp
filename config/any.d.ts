@@ -20,3 +20,8 @@ declare module 'dirty-chai' {
   const _: any;
   export = _;
 }
+
+declare module 'extract-text-webpack-plugin' {
+  const _: any;
+  export = _;
+}

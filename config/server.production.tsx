@@ -11,7 +11,7 @@ import { Provider } from 'react-redux';
 import { RouterContext, match } from 'react-router';
 import { applyMiddleware, createStore } from 'redux';
 
-import reducers from '../src/reducers/';
+import reducers from '../src/reducers/root_reducer';
 import routes from '../src/routes';
 
 const appconfig = require('../package.json');

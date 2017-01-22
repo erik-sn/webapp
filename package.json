@@ -1,38 +1,14 @@
 {
   "name": "tsreact",
   "version": "1.2.0",
-  "description": "React Boilerplate with support for Redux, TypeScript, Hot Reloading, Routing, Isomorphic rendering, TSLint and SASS",
+  "description": "React Boilerplate with support for Redux, TypeScript, ImmutableJS, Hot Reloading, Routing, Isomorphic rendering, TSLint, SASS, Testing",
   "main": "index.tsx",
   "repository": "https://github.com/kiresuah/ReactTypeScript",
-  "jest": {
-    "testRegex": "/__tests__/.*\\.(ts|tsx|js)$",
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js"
-    ],
-    "transform": {
-      "^.+\\.(ts|tsx)$": "<rootDir>/config/preprocessor.js"
-    },
-    "testPathIgnorePatterns": [
-      "/node_modules/",
-      "helper.tsx"
-    ],
-    "verbose": false,
-    "collectCoverage": false,
-    "collectCoverageFrom": [
-      "src/actions/**/*.{ts,tsx}",
-      "src/components/**/*.{ts,tsx}",
-      "src/reducers/**/*.{ts,tsx}",
-      "src/constants/**/*.{ts,tsx}",
-      "src/utils/**/*.{ts,tsx}"
-    ]
-  },
   "scripts": {
     "dev": "ts-node ./config/server.ts",
-    "test:watch": "npm run test -- --watch",
-    "test": "jest",
-    "coverage": "jest --coverage",
+    "tdd": "npm run test -- --watch",
+    "test": "mocha -R min --compilers ts:ts-node/register,tsx:ts-node/register --require ./__tests__/helper.tsx --recursive ./__tests__",
+    "cover": "istanbul cover -x **/__tests__/** -e .tsx _mocha -- --compilers ts:ts-node/register,tsx:ts-node/register --require ./__tests__/helper.tsx --recursive ./__tests__",
     "build": "webpack -p --config ./config/webpack.production.config.ts --progress --profile --colors",
     "start": "nodemon ./config/server.production.tsx --exec ts-node"
   },
@@ -43,7 +19,6 @@
     "@types/compression": "^0.0.33",
     "@types/enzyme": "^2.7.1",
     "@types/express": "^4.0.35",
-    "@types/extract-text-webpack-plugin": "^2.0.0",
     "@types/jsdom": "^2.0.29",
     "@types/mocha": "^2.2.38",
     "@types/morgan": "^1.7.32",
@@ -53,7 +28,9 @@
     "@types/react-hot-loader": "^3.0.0",
     "@types/react-redux": "^4.4.35",
     "@types/react-router": "^2.0.45",
+    "@types/react-router-redux": "^4.0.38",
     "@types/redux": "^3.6.0",
+    "@types/redux-immutable": "^3.0.32",
     "@types/redux-promise": "^0.5.24",
     "@types/redux-thunk": "^2.1.0",
     "@types/sinon": "^1.16.34",
@@ -76,6 +53,7 @@
     "mocha": "^3.2.0",
     "node-sass": "^4.3.0",
     "nodemon": "^1.11.0",
+    "nyc": "^10.1.2",
     "postcss-loader": "^1.2.2",
     "react-addons-test-utils": "^15.4.2",
     "react-hot-loader": "v3.0.0-beta.6",
@@ -93,12 +71,15 @@
     "compression": "^1.6.2",
     "es6-promise": "^4.0.5",
     "express": "^4.14.0",
+    "immutable": "^3.8.1",
     "morgan": "^1.7.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-redux": "^4.4.5",
     "react-router": "^3.0.2",
+    "react-router-redux": "^4.0.7",
     "redux": "^3.6.0",
+    "redux-immutable": "^3.0.10",
     "redux-promise": "^0.5.3",
     "redux-thunk": "^2.2.0"
   }

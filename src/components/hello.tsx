@@ -2,10 +2,9 @@ import * as React from 'react';
 
 
 export interface IParams { name: String; }
+export interface IProps { params: IParams; }
 
-interface IHelloProps { params: IParams; route: Object; }
-
-export default class Hello extends React.Component<IHelloProps, {}> {
+class Hello extends React.Component<IProps, {}> {
 
   public render() {
     return (
@@ -14,3 +13,5 @@ export default class Hello extends React.Component<IHelloProps, {}> {
   }
 
 }
+
+export default Hello;

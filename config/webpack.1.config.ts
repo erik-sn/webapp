@@ -37,8 +37,13 @@ const configuration: any = {
       },
       {
         include: path.join(__dirname, '../src'),
-        loader: 'ts-loader',
+        loader: 'awesome-typescript-loader',
         test: /\.tsx$/,
+      },
+      {
+        include: path.join(__dirname, '../src'),
+        loader: 'awesome-typescript-loader',
+        test: /\.ts$/,
       },
       {
         test: /\.json$/,

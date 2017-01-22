@@ -1,23 +1,21 @@
-
 import { expect } from 'chai';
+import { shallow } from 'enzyme';
+import * as React from 'react';
 
-import Hello from '../../src/components/hello';
-import { sRender } from '../helper';
+import Hello, { IProps } from '../../src/components/hello';
 
 describe('Lets write tests!' , () => {
 
   describe('Hello' , () => {
     let component: any;
-    const props = {
+    const props: IProps = {
       params: {
         name: 'hello world',
       },
     };
-    const state = {};
-
 
     beforeEach(() => {
-      component = sRender(Hello, props, state);
+      component = shallow(<Hello {...props} />);
     });
 
     it('renders something', () => {
