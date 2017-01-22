@@ -11,6 +11,9 @@ import router from './routes';
 const createStoreWithMiddleware = applyMiddleware(thunk.default)(createStore);
 
 // require all .scss files for deploy if we are not server rendering
+// process.env.BROWSER is set in webpack.config.ts in development but deleted
+// in the express.js server. This way no .scss files are required while in
+// node which will throw an error, but webpack still bundles them.
 if (process.env.BROWSER) {
   const requireAll = (r: any) => r.keys().forEach(r);
   requireAll(require.context('./sass/', true, /\.scss$/));
