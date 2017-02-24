@@ -1,0 +1,8 @@
+app/node_modules
+app/npm-debug.log
+app/dist
+app/coverage
+
+
+.idea
+.vscode

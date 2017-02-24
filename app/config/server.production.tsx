@@ -8,7 +8,7 @@ import * as logger from 'morgan';
 import * as  React from 'react';
 import { renderToString } from 'react-dom/server';
 import { Provider } from 'react-redux';
-import { RouterContext, match } from 'react-router';
+import {  match, RouterContext } from 'react-router';
 import { applyMiddleware, createStore } from 'redux';
 
 import reducers from '../src/reducers/root_reducer';
@@ -20,7 +20,7 @@ const appconfig = require('../package.json');
 let server: any;
 
 const app = express(); // delcare application
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 4000;
 
 app.use(compression()); // compress compatible files for quicker client load time
 app.use(logger('dev')); // log content
@@ -83,3 +83,4 @@ function renderFullPage(html: string, version: string) {
     </html>
   `;
 }
+
