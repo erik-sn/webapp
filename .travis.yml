@@ -1,0 +1,11 @@
+language: node_js
+node_js:
+- '6.10.0'
+- '7.7.2'
+install:
+- yarn
+script:
+  - npm run lint
+  - npm run cover
+  - npm run start
+after_success: COVERALLS_REPO_TOKEN=hyZe1kyLEaMc4V123qc8UeDGHrwsu4GC7 coveralls

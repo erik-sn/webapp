@@ -9,7 +9,7 @@ ReactDOM.render(
   <AppContainer>
     <App />
   </AppContainer>,
-  rootEl
+  rootEl,
 );
 
 // react hot module reloading
@@ -21,7 +21,7 @@ if (module.hot) {
       <AppContainer>
          <NextApp />
       </AppContainer>,
-      rootEl
+      rootEl,
     );
   });
 }

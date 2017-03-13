@@ -1,6 +1,5 @@
 // tslint:disable:no-string-literal
 import * as chai from 'chai';
-import * as dirtyChai from 'dirty-chai';
 import * as jsdom from 'jsdom';
 import * as  React from 'react';
 import { Provider } from 'react-redux';
@@ -12,10 +11,6 @@ import reducers from '../src/reducers/root_reducer';
 class Dictionary<TValue> {
     [index: string]: TValue;
 }
-
-// improve chai assertions to satisfy linting
-chai.use(dirtyChai);
-
 
 // jsdom configuration
 declare const global: any;

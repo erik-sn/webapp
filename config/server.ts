@@ -1,8 +1,7 @@
 import * as webpack from 'webpack';
 import * as WebpackDevServer from 'webpack-dev-server';
 
-import configuration from './webpack.1.config';
-
+import configuration from './webpack.2.config';
 
 new WebpackDevServer(webpack(configuration), {
   historyApiFallback: true,
