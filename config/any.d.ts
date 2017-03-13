@@ -16,7 +16,6 @@ declare module 'extract-text-webpack-plugin' {
   export = _;
 }
 
-
 declare module 'react-router-dom' {
   export const StaticRouter: any;
   export const BrowserRouter: any;
@@ -36,4 +35,10 @@ declare module 'react-router-dom' {
     hash: string;
     state: any;
   }
+}
+
+declare module 'react-router-redux' {
+  export const ConnectedRouter: any;
+  export const routerMiddleware: any;
+  export const routerReducer: any;
 }

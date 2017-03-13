@@ -1,7 +1,8 @@
+import { routerReducer } from 'react-router-redux';
 import { combineReducers } from 'redux';
 
 const rootReducer = combineReducers({
-  test: (s: any, a: any): any => [],
+  router: routerReducer,
 });
 
 export default rootReducer;

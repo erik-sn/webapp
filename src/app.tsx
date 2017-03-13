@@ -1,12 +1,18 @@
 import * as React from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
+import { ConnectedRouter, routerMiddleware } from 'react-router-redux';
 import { applyMiddleware, createStore } from 'redux';
 
 import reducers from './reducers/root_reducer';
 import router from './routes';
+// tslint:disable-next-line:no-var-requires
+const { createBrowserHistory } = require('history'); // temporary until type definitions are worked out
 
-const createStoreWithMiddleware = applyMiddleware()(createStore);
+const history = createBrowserHistory();
+const middleware = routerMiddleware(history);
+
+const createStoreWithMiddleware = applyMiddleware(middleware)(createStore);
 
 // require all .scss files for deploy if we are not server rendering
 // process.env.BROWSER is set in webpack.config.ts in development but deleted
@@ -24,9 +30,9 @@ const store = createStoreWithMiddleware(reducers, window.__REDUX_DEVTOOLS_EXTENS
 
 const App = () => (
   <Provider store={store}>
-    <BrowserRouter>
+    <ConnectedRouter history={history} >
       {router}
-    </BrowserRouter>
+    </ConnectedRouter>
   </Provider>
 );
 
