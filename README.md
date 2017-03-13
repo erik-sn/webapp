@@ -1,54 +1,28 @@
-# Web Application Boilerplate
+# React/Redux Boilerplate
+[![Build Status](https://travis-ci.org/erik-sn/webapp.svg?branch=master)](https://travis-ci.org/erik-sn/webapp)
+[![Coverage Status](https://coveralls.io/repos/github/erik-sn/webapp/badge.svg?branch=master)](https://coveralls.io/github/erik-sn/webapp?branch=master)
 
-Default web application boiler plate for (mostly) personal use.
+React/Redux boilerplate that includes the (optional) use of TypeScript
 
-### Technologies:
-
-##### Front End
-- React
-- Redux
-- TypeScript
-- Isomorphic Rendering
-- Node.js
-
-##### Back End
-- Django
-- Django Rest Framework
-
-
-### Intended Use:
-The "app" and "api" are completely separate applications. "app" is a react/node.js front end application
-that is served with an express.js node server. The "api" is a separate python server that provides
-REST API endpoints for the react application to use.
-
-This project is designed to be fairly basic. However it has the tools such as server side rendering, automated testing,
-routing, data management, and error tracking that make it suitable for larger projects. It is extensible so libraries
-can be added, but also taken away to simplify if necessary
-
-The most practical way to run this application is have the django application run on one port, the node application on another,
-and then configure reverse proxy through Nginx/Apache/IIS so `/api*` endpoints are pointed to the django application, and all
-others to the node application.
-
-Separate READMEs for more application specific information are in the respective folders.
-
-### Requirements:
-- Node >= v6
-- Yarn (JavaScript package manager)
-- Python >= 3.4
+###Features
+- [React.js](https://facebook.github.io/react/)
+- [Redux](https://github.com/reactjs/redux)
+- [TypeScript](https://www.typescriptlang.org/index.html)
+- [Webpack](https://webpack.github.io/)
+- [React Router](https://github.com/reactjs/react-router)
+- [Hot Reloading](https://github.com/gaearon/react-hot-loader)
+- [Isomorphic/Server Side Rendering](http://nerds.airbnb.com/isomorphic-javascript-future-web-apps/)
+- [Mocha/Chai/Enzyme/Sinon/Istanbul Testing](https://mochajs.org/)
+- [SASS](http://sass-lang.com/)
+- [TSLint/TSLint-React](https://palantir.github.io/tslint/)
 
 
-### Installation:
-```bash
-git clone https://github.com/erik-sn/webapp.git
-
-cd webapp/api
-pip install virtualenv
-virtualenv venv
-source venv/bin/activate
-cd ../..
-pip install -r requirements.txt
-
-
-cd webapp/app
-yarn install
-```
+### NPM Scripts
+- <b>dev</b>: start the development server which runs by default on port 3000 and has hot reloading
+- <b>test</b>: Run all tests inside the __tests__ directory
+- <b>tdd</b>: Run test in watch mode, after every save the tests are re-run (test driven design)
+- <b>cover</b>: Run test and generate a coverage report indicating which code was executed while tests were ran. HTML report
+is added to the `/app/coverage` directory
+- <b>build</b>: run the webpack build configuration to compile TypeScript/ES6 into ES5 javascript in the /dist directory
+- <b>start</b>: start the production server which hosts the minified/uglified versions of javascript/css files and supports
+server side rendering with React Router & Redux. Designed for use in production, runs by default on port 4000.

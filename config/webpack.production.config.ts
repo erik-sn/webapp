@@ -8,7 +8,7 @@ import * as webpack from 'webpack';
 const appconfig = require('../package.json');
 promise.polyfill();
 
-module.exports = {
+const configuration: webpack.Configuration = {
   devtool: 'hidden-source-map',
   entry: [
     './src/index.tsx',
@@ -27,30 +27,41 @@ module.exports = {
     new webpack.optimize.UglifyJsPlugin({
       compress: { warnings: false },
     }),
-    new ExtractTextPlugin('/bundle.min.' + appconfig.version + '.css', {
+    new ExtractTextPlugin({
+      filename: '/bundle.min.' + appconfig.version + '.css',
       allChunks: true,
     }),
+    new webpack.LoaderOptionsPlugin({ options: { postcss: [ autoprefixer ] } }),
   ],
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.scss$/,
-        loader: ExtractTextPlugin.extract('css!postcss!sass'),
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: ['css-loader', 'postcss-loader', 'sass-loader'],
+          publicPath: '/dist',
+        }),
         include: path.join(__dirname, '../src/sass'),
       },
       {
         test: /\.jpe?g$|\.gif$|\.png$/i,
-        loader: 'file-loader?name=/img/[name].[ext]',
+        use: 'file-loader?name=/img/[name].[ext]',
       },
       {
         test: /\.ts$|\.tsx$/,
-        loaders: ['awesome-typescript-loader'],
+        use: ['awesome-typescript-loader'],
         include: path.join(__dirname, '../src'),
+      },
+      {
+        test: /\.json$/,
+        use: 'json-loader',
       },
     ],
   },
   resolve: {
-    extensions: ['', '.webpack.js', '.web.js', '.js', '.ts', '.tsx', '.json'],
+    extensions: ['.webpack.js', '.web.js', '.js', '.ts', '.tsx', '.json'],
   },
-  postcss: [autoprefixer],
 };
+
+export default configuration;

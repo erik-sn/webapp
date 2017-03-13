@@ -9,8 +9,13 @@ describe('Lets write tests!' , () => {
   describe('Hello' , () => {
     let component: any;
     const props: IProps = {
-      params: {
-        name: 'hello world',
+      match: {
+        isExact: true,
+        params: {
+          name: 'hello world',
+        },
+        path: '/hello',
+        url: '/hello/',
       },
     };
 
@@ -21,8 +26,5 @@ describe('Lets write tests!' , () => {
     it('renders something', () => {
       expect(component).to.exist;
     });
-
-
   });
-
 });

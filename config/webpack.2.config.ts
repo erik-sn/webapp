@@ -4,7 +4,6 @@ import * as promise from 'es6-promise';
 import * as path from 'path';
 import * as webpack from 'webpack';
 
-
 promise.polyfill();
 
 const configuration: webpack.Configuration = {
@@ -33,31 +32,31 @@ const configuration: webpack.Configuration = {
   module: {
     rules: [
       {
-        use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader'],
         test: /\.scss$/,
+        use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader'],
       },
       {
-        include: path.join(__dirname, '../src'),
-        use: ['awesome-typescript-loader'],
         test: /\.tsx$/,
-      },
-      {
         include: path.join(__dirname, '../src'),
         use: ['awesome-typescript-loader'],
+      },
+      {
         test: /\.ts$/,
+        include: path.join(__dirname, '../src'),
+        use: ['awesome-typescript-loader'],
       },
       {
         test: /\.json$/,
         use: 'json-loader',
       },
       {
-        use: 'file-loader',
         test: /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)(\?.*)?$/,
+        use: 'file-loader',
       },
     ],
   },
   resolve: {
-    extensions: ['*', '.ts', '.tsx', '.json'],
+    extensions: ['*', '.ts', '.tsx', '.json', '.', '.js', '.jsx'],  // the js extensions are necessary for webpack
   },
 };
 

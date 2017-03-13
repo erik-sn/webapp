@@ -8,7 +8,8 @@ import * as logger from 'morgan';
 import * as  React from 'react';
 import { renderToString } from 'react-dom/server';
 import { Provider } from 'react-redux';
-import {  match, RouterContext } from 'react-router';
+// import {  match, RouterContext } from 'react-router';
+import { StaticRouter } from 'react-router-dom';
 import { applyMiddleware, createStore } from 'redux';
 
 import reducers from '../src/reducers/root_reducer';
@@ -36,24 +37,25 @@ app.use('/static', express.static('dist'));
  * client in an html form with static resources attached to it. After this page is loaded, any links o
  * routing that takes place will be handled purely by the javascript in react router.
  */
+const context: any = {};
 app.use('*', (req: any, res: any) => {
-  match({ routes, location: req.originalUrl }, (error, redirectLocation, renderProps) => {
-    if (error) {
-      res.status(500).send(error.message);
-    } else if (redirectLocation) {
-      res.redirect(302, redirectLocation.pathname + redirectLocation.search);
-    } else if (renderProps) {
-      const createStoreWithMiddleware = applyMiddleware()(createStore);
-      const html = renderToString(
-        <Provider store={createStoreWithMiddleware(reducers)} >
-          <RouterContext { ...renderProps } />
-        </Provider >
-      );
-      res.status(200).send(renderFullPage(html, appconfig.version));
-    } else {
-      res.status(404).send('Not found');
-    }
-  });
+  const createStoreWithMiddleware = applyMiddleware()(createStore);
+  const html = renderToString((
+    <Provider store={createStoreWithMiddleware(reducers)} >
+      <StaticRouter location={req.url} context={context} >
+        {routes}
+      </StaticRouter>
+    </Provider >
+  ));
+  if (context.url) {
+    res.writeHead(302, {
+      Location: context.url,
+    });
+    res.end();
+  } else {
+    res.write(renderFullPage(html, appconfig.version));
+    res.end();
+  }
 });
 
 // create server based on application configuration
