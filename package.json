@@ -8,9 +8,9 @@
     "dev": "ts-node ./config/server.ts",
     "tdd": "npm run test -- --watch",
     "test": "mocha -R min --compilers ts:ts-node/register,tsx:ts-node/register --require ./__tests__/helper.tsx --recursive ./__tests__",
-    "cover": "istanbul cover -x **/__tests__/** -e .tsx _mocha -- --compilers ts:ts-node/register,tsx:ts-node/register --require ./__tests__/helper.tsx --recursive ./__tests__",
+    "cover": "istanbul cover -x **/__tests__/** -e .tsx node_modules/mocha/bin/_mocha -- --compilers ts:ts-node/register,tsx:ts-node/register --require ./__tests__/helper.tsx --recursive ./__tests__",
     "lint": "tslint -c tslint.json 'src/**/*.ts*' --fix",
-    "prebuild": "npm run lint && npm run test",
+    "prebuild": "npm run lint && npm run cover",
     "build": "webpack --config ./config/webpack.production.config.ts --progress --profile --colors",
     "start": "nodemon ./config/server.production.tsx --exec ts-node"
   },
@@ -63,6 +63,7 @@
     "tslint-react": "^2.3.0",
     "typescript-require": "^0.2.9-1",
     "webpack": "^2.2.1",
+    "webpack-bundle-analyzer": "^2.3.1",
     "webpack-dev-server": "^2.4.1"
   },
   "dependencies": {
@@ -76,7 +77,7 @@
     "react-redux": "^5.0.3",
     "react-router": "^4.0.0",
     "react-router-dom": "^4.0.0",
-    "react-router-redux": "5.0.0-alpha.2",
+    "react-router-redux": "5.0.0-alpha.3",
     "redux": "^3.6.0",
     "redux-promise": "^0.5.3"
   }

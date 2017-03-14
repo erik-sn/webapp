@@ -6,4 +6,5 @@ script:
   - npm run lint
   - npm run cover
   - npm run build
-after_success: COVERALLS_REPO_TOKEN=hyZe1kyLEaMc4V123qc8UeDGHrwsu4GC7 coveralls
+after_success:
+  - coveralls
