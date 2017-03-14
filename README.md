@@ -23,6 +23,7 @@ React/Redux boilerplate that includes the (optional) use of TypeScript
 - <b>tdd</b>: Run test in watch mode, after every save the tests are re-run (test driven design)
 - <b>cover</b>: Run test and generate a coverage report indicating which code was executed while tests were ran. HTML report
 is added to the `/app/coverage` directory
+- <b>lint</b>: run tslint on the project to fix minor issues and alert more important ones
 - <b>build</b>: run the webpack build configuration to compile TypeScript/ES6 into ES5 javascript in the /dist directory
 - <b>start</b>: start the production server which hosts the minified/uglified versions of javascript/css files and supports
 server side rendering with React Router & Redux. Designed for use in production, runs by default on port 4000.
