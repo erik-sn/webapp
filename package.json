@@ -41,6 +41,7 @@
     "autoprefixer": "^6.6.1",
     "awesome-typescript-loader": "^3.0.0-beta.18",
     "chai": "^3.5.0",
+    "codecov": "^1.0.1",
     "css-loader": "^0.27.2",
     "dirty-chai": "^1.2.2",
     "enzyme": "^2.7.0",

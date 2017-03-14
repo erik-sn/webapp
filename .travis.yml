@@ -2,9 +2,6 @@ language: node_js
 node_js:
 - '6.10.0'
 - '7.7.2'
-install:
-  - npm install -g codecov
-  - yarn
 script:
   - npm run build
   - codecov
