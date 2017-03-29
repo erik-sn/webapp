@@ -9,6 +9,8 @@ describe('Lets write tests!' , () => {
   describe('Hello' , () => {
     let component: any;
     const props: IProps = {
+      history: undefined,
+      location: undefined,
       match: {
         isExact: true,
         params: {

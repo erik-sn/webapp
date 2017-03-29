@@ -5,7 +5,7 @@ import { ConnectedRouter, routerMiddleware } from 'react-router-redux';
 import { applyMiddleware, createStore } from 'redux';
 
 import reducers from './reducers/root_reducer';
-import router from './routes';
+import Application from './components/application';
 
 // tslint:disable-next-line:no-var-requires
 const { createBrowserHistory } = require('history'); // temporary until type definitions are worked out
@@ -31,7 +31,7 @@ const store = createStoreWithMiddleware(reducers, window.__REDUX_DEVTOOLS_EXTENS
 const App = () => (
   <Provider store={store}>
     <ConnectedRouter history={history} >
-      {router}
+      <Application />
     </ConnectedRouter>
   </Provider>
 );

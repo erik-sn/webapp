@@ -16,26 +16,6 @@ declare module 'extract-text-webpack-plugin' {
   export = _;
 }
 
-declare module 'react-router-dom' {
-  export const StaticRouter: any;
-  export const BrowserRouter: any;
-  export const Route: any;
-
-  export interface IMatch {
-    isExact: boolean;
-    params: any;
-    path: string;
-    url: string;
-  }
-
-  export interface ILocation {
-    key?: string;
-    pathname: string;
-    search: string;
-    hash: string;
-    state: any;
-  }
-}
 
 declare module 'react-router-redux' {
   export const ConnectedRouter: any;

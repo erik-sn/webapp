@@ -12,8 +12,8 @@ import { Provider } from 'react-redux';
 import { StaticRouter } from 'react-router-dom';
 import { applyMiddleware, createStore } from 'redux';
 
+import Application from '../src/components/application';
 import reducers from '../src/reducers/root_reducer';
-import routes from '../src/routes';
 
 const appconfig = require('../package.json');
 
@@ -32,7 +32,7 @@ app.use('/static', express.static('dist'));
 /**
  * For every request send the URL to React Router The router will return the content that should be 
  * delivered to the user. If the URL does not match any route, a 404 will be returned. 
- * 
+ *
  * React renders the component that should be returned in string format, and that string is served to the
  * client in an html form with static resources attached to it. After this page is loaded, any links o
  * routing that takes place will be handled purely by the javascript in react router.
@@ -43,7 +43,7 @@ app.use('*', (req: any, res: any) => {
   const html = renderToString((
     <Provider store={createStoreWithMiddleware(reducers)} >
       <StaticRouter location={req.url} context={context} >
-        {routes}
+        <Application />
       </StaticRouter>
     </Provider >
   ));
@@ -85,4 +85,3 @@ function renderFullPage(html: string, version: string) {
     </html>
   `;
 }
-
