@@ -6,9 +6,9 @@ import { applyMiddleware, createStore } from 'redux';
 
 import reducers from './reducers/root_reducer';
 import router from './routes';
+
 // tslint:disable-next-line:no-var-requires
 const { createBrowserHistory } = require('history'); // temporary until type definitions are worked out
-
 const history = createBrowserHistory();
 const middleware = routerMiddleware(history);
 
