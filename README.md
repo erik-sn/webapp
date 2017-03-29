@@ -1,6 +1,7 @@
 # React/Redux Boilerplate
 [![Build Status](https://travis-ci.org/erik-sn/webapp.svg?branch=master)](https://travis-ci.org/erik-sn/webapp)
-[![Coverage Status](https://coveralls.io/repos/github/erik-sn/webapp/badge.svg?branch=master)](https://coveralls.io/github/erik-sn/webapp?branch=master)
+[![codecov](https://codecov.io/gh/erik-sn/webapp/branch/master/graph/badge.svg)](https://codecov.io/gh/erik-sn/webapp)
+
 
 React/Redux boilerplate that includes the (optional) use of TypeScript
 

@@ -9,7 +9,8 @@
     "dev": "ts-node ./config/server.ts",
     "tdd": "npm run test -- --watch",
     "test": "mocha -R min --compilers ts:ts-node/register,tsx:ts-node/register --require ./__tests__/helper.tsx --recursive ./__tests__",
-    "cover": "istanbul cover -x **/__tests__/** -e .tsx _mocha -- --compilers ts:ts-node/register,tsx:ts-node/register --require ./__tests__/helper.tsx --recursive ./__tests__",
+    "cover": "istanbul cover -x **/__tests__/** -e .tsx node_modules/mocha/bin/_mocha -- --compilers ts:ts-node/register,tsx:ts-node/register --require ./__tests__/helper.tsx --recursive ./__tests__",
+    "cover:ci": "istanbul cover -x **/__tests__/** -e .tsx node_modules/mocha/bin/_mocha --reporter lcovonly -- --compilers ts:ts-node/register,tsx:ts-node/register --require ./__tests__/helper.tsx --recursive ./__tests__",
     "lint": "tslint -c tslint.json 'src/**/*.ts*' --fix",
     "build": "webpack --config ./config/webpack.production.config.ts --progress --profile --colors",
     "start": "nodemon ./config/server.production.tsx --exec ts-node"
@@ -40,6 +41,7 @@
     "autoprefixer": "^6.6.1",
     "awesome-typescript-loader": "^3.0.0-beta.18",
     "chai": "^3.5.0",
+    "codecov": "^1.0.1",
     "css-loader": "^0.27.2",
     "dirty-chai": "^1.2.2",
     "enzyme": "^2.7.0",
@@ -62,6 +64,7 @@
     "tslint-react": "^2.3.0",
     "typescript-require": "^0.2.9-1",
     "webpack": "^2.2.1",
+    "webpack-bundle-analyzer": "^2.3.1",
     "webpack-dev-server": "^2.4.1"
   },
   "dependencies": {
