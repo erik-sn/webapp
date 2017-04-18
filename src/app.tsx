@@ -4,8 +4,8 @@ import { BrowserRouter } from 'react-router-dom';
 import { ConnectedRouter, routerMiddleware } from 'react-router-redux';
 import { applyMiddleware, createStore } from 'redux';
 
-import reducers from './reducers/root_reducer';
 import Application from './components/application';
+import reducers from './reducers/root_reducer';
 
 // tslint:disable-next-line:no-var-requires
 const { createBrowserHistory } = require('history'); // temporary until type definitions are worked out

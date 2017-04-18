@@ -1,13 +1,11 @@
 import * as React from 'react';
-import { Link, Route, Switch, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { Link, Route, Switch, withRouter } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
 
 import Hello from './hello';
 
-export interface IApplicationProps {}
-
-class Application extends React.Component<IApplicationProps, {}> {
+class Application extends React.Component<{}, {}> {
   public render() {
     return (
       <div className="application-container">
@@ -31,4 +29,4 @@ function mapDispatchToProps(dispatch: any) {
     return bindActionCreators({}, dispatch);
 }
 
-export default connect<{}, {}, IApplicationProps> (mapStateToProps, mapDispatchToProps)(Application);
+export default connect<{}, {}, {}> (mapStateToProps, mapDispatchToProps)(Application);

@@ -1,16 +1,14 @@
 /* tslint:disable:no-var-requires object-literal-sort-keys */
 import * as autoprefixer from 'autoprefixer';
-import * as promise from 'es6-promise';
 import * as ExtractTextPlugin from 'extract-text-webpack-plugin';
 import * as path from 'path';
 import * as webpack from 'webpack';
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const appconfig = require('../package.json');
-promise.polyfill();
 
 const configuration: webpack.Configuration = {
-  devtool: 'hidden-source-map',
+  devtool: 'source-map',
   entry: [
     './src/index.tsx',
   ],
@@ -29,6 +27,12 @@ const configuration: webpack.Configuration = {
       filename: '/bundle.min.' + appconfig.version + '.css',
       allChunks: true,
     }),
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false,
+        drop_console: true,
+      },
+    }),
     new webpack.LoaderOptionsPlugin({ options: { postcss: [ autoprefixer ] } }),
     new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /en/),
     // new BundleAnalyzerPlugin(),
@@ -46,7 +50,7 @@ const configuration: webpack.Configuration = {
       },
       {
         test: /\.jpe?g$|\.gif$|\.png$/i,
-        use: 'file-loader?name=/img/[name].[ext]',
+        use: 'file-loader?name=[name].[ext]',
       },
       {
         test: /\.ts$|\.tsx$/,

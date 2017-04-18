@@ -1,3 +1,5 @@
+import * as process from 'process';
+import { Location } from 'tslint/lib/rules/completedDocsRule';
 /* tslint:disable:no-var-requires object-literal-sort-keys */
 delete process.env.BROWSER;
 
@@ -5,21 +7,18 @@ import * as compression from 'compression';
 import * as express from 'express';
 import * as http from 'http';
 import * as logger from 'morgan';
-import * as  React from 'react';
+import * as React from 'react';
 import { renderToString } from 'react-dom/server';
 import { Provider } from 'react-redux';
 // import {  match, RouterContext } from 'react-router';
 import { StaticRouter } from 'react-router-dom';
-import { applyMiddleware, createStore } from 'redux';
+import { applyMiddleware, createStore, Store } from 'redux';
 
 import Application from '../src/components/application';
 import reducers from '../src/reducers/root_reducer';
 
 const appconfig = require('../package.json');
-
-
 let server: any;
-
 const app = express(); // delcare application
 const PORT = process.env.PORT || 4000;
 
@@ -28,35 +27,41 @@ app.use(logger('dev')); // log content
 
 // Set path to public assets
 app.use('/static', express.static('dist'));
+app.use('/dist', express.static('dist'));
 
 /**
- * For every request send the URL to React Router The router will return the content that should be 
- * delivered to the user. If the URL does not match any route, a 404 will be returned. 
+ * For every request send the URL to React Router The router will return the content that should be
+ * delivered to the user. If the URL does not match any route, a 404 will be returned.
  *
  * React renders the component that should be returned in string format, and that string is served to the
  * client in an html form with static resources attached to it. After this page is loaded, any links o
  * routing that takes place will be handled purely by the javascript in react router.
  */
 const context: any = {};
-app.use('*', (req: any, res: any) => {
+app.use('/', (req: any, res: any) => {
+    const html = generateHtml(req);
+    if (context.url) {
+      res.writeHead(302, {
+        Location: context.url,
+      });
+      res.end();
+    } else {
+      res.header('Content-Type', 'text/html; charset=utf-8');
+      res.write(renderFullPage(html, appconfig.version));
+      res.end();
+    }
+});
+
+function generateHtml(req: any): string {
   const createStoreWithMiddleware = applyMiddleware()(createStore);
-  const html = renderToString((
+  return renderToString(
     <Provider store={createStoreWithMiddleware(reducers)} >
       <StaticRouter location={req.url} context={context} >
         <Application />
       </StaticRouter>
-    </Provider >
-  ));
-  if (context.url) {
-    res.writeHead(302, {
-      Location: context.url,
-    });
-    res.end();
-  } else {
-    res.write(renderFullPage(html, appconfig.version));
-    res.end();
-  }
-});
+    </Provider>,
+  );
+}
 
 // create server based on application configuration
 server = http.createServer(app);
@@ -75,7 +80,9 @@ function renderFullPage(html: string, version: string) {
   return `
     <!doctype html>
     <html>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
       <head>
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
         <link rel="stylesheet" href="/static/bundle.min.${version}.css">
       </head>
       <body id="app-body">
