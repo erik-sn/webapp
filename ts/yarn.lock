@@ -2,7 +2,7 @@
 # yarn lockfile v1
 
 
-"@types/chai@^3.4.34":
+"@types/chai@^3.5.1":
   version "3.5.1"
   resolved "https://registry.yarnpkg.com/@types/chai/-/chai-3.5.1.tgz#9bd77fe12503ae00648b0945b38eab666adffe2e"
 
@@ -16,7 +16,7 @@
   dependencies:
     "@types/express" "*"
 
-"@types/enzyme@^2.7.1":
+"@types/enzyme@^2.7.9":
   version "2.7.9"
   resolved "https://registry.yarnpkg.com/@types/enzyme/-/enzyme-2.7.9.tgz#2d9cb8c6addb3483e9034a47e38eda9301186535"
   dependencies:
@@ -55,7 +55,7 @@
   version "0.0.29"
   resolved "https://registry.yarnpkg.com/@types/mime/-/mime-0.0.29.tgz#fbcfd330573b912ef59eeee14602bface630754b"
 
-"@types/mocha@^2.2.38":
+"@types/mocha@^2.2.41":
   version "2.2.41"
   resolved "https://registry.yarnpkg.com/@types/mocha/-/mocha-2.2.41.tgz#e27cf0817153eb9f2713b2d3f6c68f1e1c3ca608"
 
@@ -130,7 +130,7 @@
     "@types/express-serve-static-core" "*"
     "@types/mime" "*"
 
-"@types/sinon@^2.1.0":
+"@types/sinon@^2.1.2":
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/@types/sinon/-/sinon-2.1.2.tgz#88dbbd29910c4fd1b5fbd3c733a723f277eab583"
 
@@ -160,7 +160,7 @@
   version "1.13.0"
   resolved "https://registry.yarnpkg.com/@types/webpack-env/-/webpack-env-1.13.0.tgz#3044381647e11ee973c5af2e925323930f691d80"
 
-"@types/webpack@*", "@types/webpack@^2.2.2":
+"@types/webpack@*", "@types/webpack@^2.2.15":
   version "2.2.15"
   resolved "https://registry.yarnpkg.com/@types/webpack/-/webpack-2.2.15.tgz#4ad7e9b7a51cae736a1dc783f203610c884789ff"
   dependencies:
@@ -373,7 +373,7 @@ autoprefixer@^6.3.1, autoprefixer@^6.6.1:
     postcss "^5.2.16"
     postcss-value-parser "^3.2.3"
 
-awesome-typescript-loader@^3.0.0-beta.18:
+awesome-typescript-loader@^3.1.2:
   version "3.1.2"
   resolved "https://registry.yarnpkg.com/awesome-typescript-loader/-/awesome-typescript-loader-3.1.2.tgz#3df192b91a6285f795ca65e63aad114fbb44f710"
   dependencies:
@@ -1113,13 +1113,13 @@ date-now@^0.1.4:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/date-now/-/date-now-0.1.4.tgz#eaf439fd4d4848ad74e5cc7dbef200672b9e345b"
 
-debug@2.2.0, debug@~2.2.0:
+debug@2.2.0, debug@^2.2.0, debug@~2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/debug/-/debug-2.2.0.tgz#f87057e995b1a1f6ae6a4960664137bc56f039da"
   dependencies:
     ms "0.7.1"
 
-debug@2.6.1, debug@^2.2.0:
+debug@2.6.1:
   version "2.6.1"
   resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.1.tgz#79855090ba2c4e3115cc7d8769491d58f0491351"
   dependencies:
@@ -1327,7 +1327,7 @@ entities@^1.1.1, entities@~1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/entities/-/entities-1.1.1.tgz#6e5c2d0a5621b5dadaecef80b90edfb5cd7772f0"
 
-enzyme@^2.7.0:
+enzyme@^2.8.2:
   version "2.8.2"
   resolved "https://registry.yarnpkg.com/enzyme/-/enzyme-2.8.2.tgz#6c8bcb05012abc4aa4bc3213fb23780b9b5b1714"
   dependencies:
@@ -1381,7 +1381,7 @@ es6-promise@^3.0.2:
   version "3.3.1"
   resolved "https://registry.yarnpkg.com/es6-promise/-/es6-promise-3.3.1.tgz#a08cdde84ccdbf34d027a1451bc91d4bcd28a613"
 
-es6-promise@^4.0.5:
+es6-promise@^4.1.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/es6-promise/-/es6-promise-4.1.0.tgz#dda03ca8f9f89bc597e689842929de7ba8cebdf0"
 
@@ -1468,7 +1468,7 @@ expand-range@^1.8.1:
   dependencies:
     fill-range "^2.1.0"
 
-express@^4.13.3, express@^4.14.0, express@^4.15.2:
+express@^4.13.3, express@^4.15.2:
   version "4.15.2"
   resolved "https://registry.yarnpkg.com/express/-/express-4.15.2.tgz#af107fc148504457f2dca9a6f2571d7129b97b35"
   dependencies:
@@ -2918,7 +2918,7 @@ mocha@^3.2.0:
     mkdirp "0.5.1"
     supports-color "3.1.2"
 
-morgan@^1.7.0:
+morgan@^1.8.1:
   version "1.8.1"
   resolved "https://registry.yarnpkg.com/morgan/-/morgan-1.8.1.tgz#f93023d3887bd27b78dfd6023cea7892ee27a4b1"
   dependencies:
@@ -3790,7 +3790,7 @@ rc@^1.0.1, rc@^1.1.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-react-addons-test-utils@^15.4.2:
+react-addons-test-utils@^15.5.1:
   version "15.5.1"
   resolved "https://registry.yarnpkg.com/react-addons-test-utils/-/react-addons-test-utils-15.5.1.tgz#e0d258cda2a122ad0dff69f838260d0c3958f5f7"
   dependencies:
@@ -4886,7 +4886,7 @@ webpack-dev-middleware@^1.9.0:
     path-is-absolute "^1.0.0"
     range-parser "^1.0.3"
 
-webpack-dev-server@^2.4.1:
+webpack-dev-server@^2.4.2:
   version "2.4.2"
   resolved "https://registry.yarnpkg.com/webpack-dev-server/-/webpack-dev-server-2.4.2.tgz#cf595d6b40878452b6d2ad7229056b686f8a16be"
   dependencies:
@@ -4922,7 +4922,7 @@ webpack-sources@^0.2.3:
     source-list-map "^1.1.1"
     source-map "~0.5.3"
 
-webpack@^2.2.1:
+webpack@^2.4.1:
   version "2.4.1"
   resolved "https://registry.yarnpkg.com/webpack/-/webpack-2.4.1.tgz#15a91dbe34966d8a4b99c7d656efd92a2e5a6f6a"
   dependencies:
