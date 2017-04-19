@@ -1,8 +1,21 @@
-node_modules
-npm-debug.log
-dist
-coverage
+;; environment variables
+.env
 
 
-.idea
+;; virtual environments
+ven
+venv
+env
+
+;; IDE configurations
+.idea/
 .vscode
+
+;; code coverage reports
+.coverage
+cover
+coverage
+htmlcov
+
+;; database
+db.sqlite3

@@ -1,13 +1,21 @@
-/* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable */
+require('dotenv').config({ path: '../.env' });
+
 const autoprefixer = require('autoprefixer');
 const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-// eslint-disable-next-line no-unused-vars
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-
 const appconfig = require('../package.json');
+
+// if the application is being served through express.js &
+// server side rendering, place in dist folder. If it is being
+// served through Django, place it in the api app/static folder
+let outputPath = '../dist';
+if (process.env.SERVER.toUpperCase() === 'DJANGO') {
+  outputPath = '../api/static/api';
+}
 
 module.exports = {
   devtool: 'source-map',
@@ -15,8 +23,8 @@ module.exports = {
     './src/index.js',
   ],
   output: {
-    path: path.join(__dirname, '../dist'),
-    filename: `bundle.min.${appconfig.version}.js`,
+    path: path.join(__dirname, outputPath),
+    filename: `bundle.min.js`,
     publicPath: '/dist/',
   },
   plugins: [
@@ -26,7 +34,7 @@ module.exports = {
       },
     }),
     new ExtractTextPlugin({
-      filename: `/bundle.min.${appconfig.version}.css`,
+      filename: `/bundle.min.css`,
       allChunks: true,
     }),
     new webpack.optimize.UglifyJsPlugin({
