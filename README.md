@@ -1,31 +1,10 @@
-# React/Redux Boilerplate
-[![Build Status](https://travis-ci.org/erik-sn/webapp.svg?branch=master)](https://travis-ci.org/erik-sn/webapp)
-[![codecov](https://codecov.io/gh/erik-sn/webapp/branch/master/graph/badge.svg)](https://codecov.io/gh/erik-sn/webapp)
+# Webapp Boilerplate
 
+This application contains two versions of the same application: one in JavaScript and the other in TypeScript. Unless specified
+below these applications should behave in the exact same way (including npm scripts). More detailed information on the repositories
+can be found in readmes inside their respective directories.
 
-React/Redux boilerplate that includes the (optional) use of TypeScript
+Application differences:
 
-###Features
-- [React.js](https://facebook.github.io/react/)
-- [Redux](https://github.com/reactjs/redux)
-- [TypeScript](https://www.typescriptlang.org/index.html)
-- [Webpack](https://webpack.github.io/)
-- [React Router](https://github.com/reactjs/react-router)
-- [Hot Reloading](https://github.com/gaearon/react-hot-loader)
-- [Isomorphic/Server Side Rendering](http://nerds.airbnb.com/isomorphic-javascript-future-web-apps/)
-- [Mocha/Chai/Enzyme/Sinon/Istanbul Testing](https://mochajs.org/)
-- [SASS](http://sass-lang.com/)
-- [TSLint/TSLint-React](https://palantir.github.io/tslint/)
-
-
-### NPM Scripts
-- <b>dev</b>: start the development server which runs by default on port 3000 and has hot reloading
-- <b>test</b>: Run all tests inside the __tests__ directory
-- <b>tdd</b>: Run test in watch mode, after every save the tests are re-run (test driven design)
-- <b>cover</b>: Run test and generate a coverage report indicating which code was executed while tests were ran. HTML report
-is added to the `/coverage` directory
-- <b>lint</b>: run tslint on the src directory to fix any trivial formatting issues and raise issue with more serious ones
-- <b>build</b>: run the webpack build configuration to compile TypeScript/ES6 into ES5 javascript in the /dist directory. Before
-building linting and a coverage test are run.
-- <b>start</b>: start the production server which hosts the minified/uglified versions of javascript/css files and supports
-server side rendering with React Router & Redux. Designed for use in production, runs by default on port 4000.
+- JS uses [Jest](https://facebook.github.io/jest/) for testing and coverage, TS uses mocha/istanbul
+- JS uses Eslint, TS uses TSlint
