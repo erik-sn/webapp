@@ -14,7 +14,7 @@ const appconfig = require('../package.json');
 // served through Django, place it in the api app/static folder
 let outputPath = '../dist';
 if (process.env.SERVER.toUpperCase() === 'DJANGO') {
-  outputPath = '../api/static/api';
+  outputPath = '../../api/static/api';
 }
 
 module.exports = {

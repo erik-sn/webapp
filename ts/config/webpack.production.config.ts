@@ -1,5 +1,5 @@
-/* eslint-disable */
-require('dotenv').config({ path: '../.env'})
+/* tslint disable */
+require('dotenv').config({ path: '../.env'});
 
 import * as autoprefixer from 'autoprefixer';
 import * as ExtractTextPlugin from 'extract-text-webpack-plugin';
@@ -14,7 +14,7 @@ const appconfig = require('../package.json');
 // served through Django, place it in the api app/static folder
 let outputPath = '../dist';
 if (process.env.SERVER.toUpperCase() === 'DJANGO') {
-  outputPath = '../api/static/api';
+  outputPath = '../../api/static/api';
 }
 
 const configuration: webpack.Configuration = {
@@ -23,7 +23,7 @@ const configuration: webpack.Configuration = {
     './src/index.tsx',
   ],
   output: {
-    path: path.join(__dirname, '../dist'),
+    path: path.join(__dirname, outputPath),
     filename: 'bundle.min.' + appconfig.version + '.js',
     publicPath: '/dist/',
   },
