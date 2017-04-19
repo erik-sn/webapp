@@ -1,6 +1,9 @@
 ;; environment variables
 .env
 
+;; other
+*.pyc
+
 
 ;; virtual environments
 ven
