@@ -29,12 +29,12 @@ function renderFullPage(html, version) {
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
       <head>
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-        <link rel="stylesheet" href="/static/bundle.min.${version}.css">
+        <link rel="stylesheet" href="/static/bundle.min.css">
       </head>
       <body id="app-body">
         <div id="app-container">${html}</div>
       </body>
-      <script src="/static/bundle.min.${version}.js"></script>
+      <script src="/static/bundle.min.js"></script>
     </html>
   `;
 }
