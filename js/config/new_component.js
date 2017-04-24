@@ -60,7 +60,7 @@ class ${componentName} extends Component {
     };
   }
 
-  ender() {
+  render() {
     return (
       <div className="${name}__container" >
         <h3>Hello ${name}</h3>
@@ -74,7 +74,7 @@ function mapStateToProps(state): {} {
   };
 }
 
-const ${componentName}Container = (mapStateToProps)(${componentName});
+const ${componentName}Container = connect(mapStateToProps)(${componentName});
 
 export default ${componentName}Container;
 `;

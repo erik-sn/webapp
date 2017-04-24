@@ -1,4 +1,4 @@
-# Webapp Boilerplate - Django + React
+# Webapp Boilerplate - Django Rest Framework + React
 
 This repository is a starting template for a django & react application. It
 combines libraries and configuration I am comfortable with for quick bootstrapping
@@ -35,13 +35,12 @@ DATABASE_URL=**optional url** # database url location - see note (2)
         to the base `index.html` file.
 
     2. If no database url is specified the local sqllite3 file in the root
-    directory is used by django. For valid urls see the [django-database-url
-    ](https://github.com/kennethreitz/dj-database-url) documentation.
+    directory is used by django. For valid urls see the [django-database-url](https://github.com/kennethreitz/dj-database-url) documentation.
 
 ### Running Server
 
 There are two choices for running the application. The first is running it as
-just a Django application, `SERVER=DJANGO` in the .env file. Front-end bundles
+just a Django application (`SERVER=DJANGO` in the .env file). Front-end bundles
 are built and output into the django static files, and urls are redirected
 to the base `index.html` which serves the React application.
 
@@ -56,9 +55,12 @@ using nginx to reverse proxy to them.
 ##### Back End
 
 On the server django & django rest framework are used to provide html
-templates and REST APIs. By default the [DRF browseable API](http://www.django-rest-framework.org/topics/browsable-api/) and [django
-debug toolbar](https://github.com/jazzband/django-debug-toolbar) are
-implemented
+templates and REST APIs.
+
+Features enabled by default:
+
+    - [DRF browseable API](http://www.django-rest-framework.org/topics/browsable-api/)
+    - [django debug toolbar](https://github.com/jazzband/django-debug-toolbar)
 
 ##### Front End
 
@@ -68,9 +70,5 @@ can be found in readmes inside their respective directories.
 
 Application differences:
 
-- JS uses [Jest](https://facebook.github.io/jest/) for testing and coverage, TS uses mocha/istanbul
-- TS uses Eslint, TS uses TSlint
-
-
-These applications come with express.js servers that allow for server side
-rendering.
+    - JS uses [Jest](https://facebook.github.io/jest/) for testing and coverage, TS uses mocha/istanbul
+    - TS uses Eslint, TS uses TSlint
