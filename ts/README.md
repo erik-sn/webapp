@@ -1,11 +1,9 @@
 # React/Redux Boilerplate
-[![Build Status](https://travis-ci.org/erik-sn/webapp.svg?branch=master)](https://travis-ci.org/erik-sn/webapp)
-[![codecov](https://codecov.io/gh/erik-sn/webapp/branch/master/graph/badge.svg)](https://codecov.io/gh/erik-sn/webapp)
-
 
 React/Redux boilerplate that includes the (optional) use of TypeScript
 
-###Features
+### Features
+
 - [React.js](https://facebook.github.io/react/)
 - [Redux](https://github.com/reactjs/redux)
 - [TypeScript](https://www.typescriptlang.org/index.html)
@@ -26,14 +24,12 @@ and `mapDispatchToProps` is generated with the `connect` function.
 
 Example:
 
-    ```bash
     npm run new NavbarContainer redux
-    ```
 
 - <b>dev</b>: start the development server which runs by default on port 3000 and has hot reloading
-- <b>test</b>: Run all tests inside the __tests__ directory
-- <b>tdd</b>: Run test in watch mode, after every save the tests are re-run (test driven design)
-- <b>cover</b>: Run test and generate a coverage report indicating which code was executed while tests were ran. HTML report
+- <b>test</b>: Run all tests inside the `__tests__` directory
+- <b>tdd</b>: Run tests in watch mode, after every save the tests are re-run (test driven design)
+- <b>cover</b>: Run tests and generate a coverage report indicating which code was executed while tests were ran. HTML report
 is added to the `/coverage` directory
 - <b>lint</b>: run tslint on the src directory to fix any trivial formatting issues and raise issue with more serious ones
 - <b>build</b>: run the webpack build configuration to compile TypeScript/ES6 into ES5 javascript in the /dist directory. Before
