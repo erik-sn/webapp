@@ -35,7 +35,7 @@ DATABASE_URL=**optional url** # database url location - see note (2)
         to the base `index.html` file.
 
     2. If no database url is specified the local sqllite3 file in the root
-    directory is used by django. For valid urls see the [django-database-url](https://github.com/kennethreitz/dj-database-url) documentation.
+    directory is used by django. For valid urls see the django-database-url (https://github.com/kennethreitz/dj-database-url) documentation.
 
 ### Running Server
 
@@ -59,8 +59,8 @@ templates and REST APIs.
 
 Features enabled by default:
 
-    - [DRF browseable API](http://www.django-rest-framework.org/topics/browsable-api/)
-    - [django debug toolbar](https://github.com/jazzband/django-debug-toolbar)
+- [DRF browseable API](http://www.django-rest-framework.org/topics/browsable-api/)
+- [django debug toolbar](https://github.com/jazzband/django-debug-toolbar)
 
 ##### Front End
 
@@ -70,5 +70,5 @@ can be found in readmes inside their respective directories.
 
 Application differences:
 
-    - JS uses [Jest](https://facebook.github.io/jest/) for testing and coverage, TS uses mocha/istanbul
-    - TS uses Eslint, TS uses TSlint
+- JS uses [Jest](https://facebook.github.io/jest/) for testing and coverage, TS uses mocha/istanbul
+- TS uses Eslint, TS uses TSlint
