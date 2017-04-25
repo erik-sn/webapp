@@ -1,6 +1,7 @@
 React/Redux boilerplate with ES6 JavaScript
 
-###Features
+### Features
+
 - [React.js](https://facebook.github.io/react/)
 - [Redux](https://github.com/reactjs/redux)
 - [Webpack](https://webpack.github.io/)
@@ -13,20 +14,20 @@ React/Redux boilerplate with ES6 JavaScript
 
 
 ### NPM Scripts
+
 - <b>new</b>: generate a new React component in the `/src`/ directory. This takes one mandatory argument, the
 component's name, and one optional component, `class` or `redux`. By default a function component is generated,
 if `class` is passed then a `React.Component` class is generated, and if `redux` is passed a class with `mapStateToProps`
 and `mapDispatchToProps` is generated with the `connect` function.
 
 Example:
-
-    ```bash
+    
     npm run new NavbarContainer redux
-    ```
+    
 
 - <b>dev</b>: start the development server which runs by default on port 3000 and has hot reloading
-- <b>test</b>: Run all tests inside the __tests__ directory
-- <b>tdd</b>: Run test in watch mode, after every save the tests are re-run (test driven design)
+- <b>test</b>: Run all tests inside the `__tests__` directory
+- <b>tdd</b>: Run tests in watch mode, after every save the tests are re-run (test driven design)
 - <b>cover</b>: Run test and generate a coverage report indicating which code was executed while tests were ran. HTML report
 is added to the `/coverage` directory
 - <b>lint</b>: run eslint on the src directory to fix any trivial formatting issues and raise issue for more serious ones
