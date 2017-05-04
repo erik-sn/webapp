@@ -4,6 +4,7 @@
         "sourceMap": true,
         "noImplicitAny": true,
         "module": "commonjs",
+        "moduleResolution": "classic",
         "target": "es5",
         "lib": ["es5", "es6", "dom"], 
         "jsx": "react",
@@ -14,6 +15,7 @@
     "exclude": [
         "node_modules",
         "dist",
-        "cover"
+        "coverage",
+        "__tests__"
     ]
 }

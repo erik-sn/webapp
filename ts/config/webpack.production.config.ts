@@ -7,7 +7,6 @@ import * as path from 'path';
 import * as webpack from 'webpack';
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
-const appconfig = require('../package.json');
 
 // if the application is being served through express.js &
 // server side rendering, place in dist folder. If it is being
@@ -24,7 +23,7 @@ const configuration: webpack.Configuration = {
   ],
   output: {
     path: path.join(__dirname, outputPath),
-    filename: 'bundle.min.' + appconfig.version + '.js',
+    filename: 'bundle.min.js',
     publicPath: '/dist/',
   },
   plugins: [
@@ -34,7 +33,7 @@ const configuration: webpack.Configuration = {
       },
     }),
     new ExtractTextPlugin({
-      filename: '/bundle.min.' + appconfig.version + '.css',
+      filename: '/bundle.min.css',
       allChunks: true,
     }),
     new webpack.optimize.UglifyJsPlugin({

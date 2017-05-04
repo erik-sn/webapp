@@ -17,7 +17,6 @@ import { applyMiddleware, createStore, Store } from 'redux';
 import Application from '../src/components/application';
 import reducers from '../src/reducers/root_reducer';
 
-const appconfig = require('../package.json');
 let server: any;
 const app = express(); // delcare application
 const PORT = process.env.PORT || 4000;
@@ -47,7 +46,7 @@ app.use('/', (req: any, res: any) => {
       res.end();
     } else {
       res.header('Content-Type', 'text/html; charset=utf-8');
-      res.write(renderFullPage(html, appconfig.version));
+      res.write(renderFullPage(html));
       res.end();
     }
 });
@@ -76,19 +75,19 @@ server.listen(PORT);
  * @param {string} version - application version from package.json
  * @return {string} full html page
  */
-function renderFullPage(html: string, version: string) {
+function renderFullPage(html: string): string {
   return `
     <!doctype html>
     <html>
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
       <head>
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-        <link rel="stylesheet" href="/static/bundle.min.${version}.css">
+        <link rel="stylesheet" href="/static/bundle.min..css">
       </head>
       <body id="app-body">
         <div id="app-container">${html}</div>
       </body>
-      <script src="/static/bundle.min.${version}.js"></script>
+      <script src="/static/bundle.min.js"></script>
     </html>
   `;
 }
