@@ -5,6 +5,7 @@ import { bindActionCreators } from 'redux';
 
 import Hello from './hello';
 
+// eslint-disable-next-line
 class Application extends Component {
   render() {
     return (
@@ -20,6 +21,7 @@ class Application extends Component {
   }
 }
 
+// eslint-disable-next-line
 function mapStateToProps(state) {
   return {
   };

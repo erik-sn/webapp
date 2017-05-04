@@ -11,8 +11,9 @@ import { Provider } from 'react-redux';
 import { StaticRouter } from 'react-router-dom';
 import { applyMiddleware, createStore, Store } from 'redux';
 
-import Application from '../src/components/application';
-import reducers from '../src/reducers/root_reducer';
+// note the dist, not src
+import Application from '../dist/components/application';
+import reducers from '../dist/reducers/root_reducer';
 
 
 /**

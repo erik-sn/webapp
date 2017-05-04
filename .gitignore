@@ -4,6 +4,9 @@
 ;; other
 *.pyc
 
+;; client side
+*.min*
+
 
 ;; virtual environments
 ven
