@@ -17,7 +17,7 @@
     "prestart": "babel ./config/server.production.js --out-file ./config/server.final.js",
     "start": "node ./config/server.final.js"
   },
-  "author": "",
+  "author": "Erik Niehaus",
   "license": "MIT",
   "jest": {
     "testPathIgnorePatterns": [

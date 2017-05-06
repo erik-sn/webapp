@@ -3,7 +3,7 @@
   "version": "1.4.1",
   "description": "React Boilerplate with support for Redux, TypeScript, Hot Reloading, Routing, Isomorphic rendering, TSLint, SASS, Testing",
   "main": "index.tsx",
-  "repository": "https://github.com/kiresuah/ReactTypeScript",
+  "repository": "https://github.com/erik-sn/webapp",
   "scripts": {
     "new": "ts-node ./config/new_component.ts",
     "dev": "ts-node ./config/server.ts",
@@ -16,7 +16,7 @@
     "build": "webpack --config ./config/webpack.production.config.ts --progress --profile --colors",
     "start": "node ./dist/config/server.production.js"
   },
-  "author": "",
+  "author": "Erik Niehaus",
   "license": "MIT",
   "devDependencies": {
     "@types/chai": "^3.5.1",
