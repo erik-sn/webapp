@@ -15,7 +15,7 @@
     "prebuild": "npm run lint && npm run test && npm run compile",
     "build": "webpack --config ./config/webpack.production.config.js --progress --profile --colors",
     "prestart": "babel ./config/server.production.js --out-file ./config/server.final.js",
-    "start": "nodemon ./config/server.final.js"
+    "start": "node ./config/server.final.js"
   },
   "author": "",
   "license": "MIT",
@@ -68,7 +68,6 @@
     "jsdom": "^9.9.1",
     "json-loader": "^0.5.4",
     "node-sass": "^4.3.0",
-    "nodemon": "^1.11.0",
     "postcss-loader": "^1.2.2",
     "react-hot-loader": "v3.0.0-beta.6",
     "sass-loader": "^6.0.3",
