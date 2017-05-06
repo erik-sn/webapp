@@ -3,20 +3,30 @@ import * as autoprefixer from 'autoprefixer';
 import * as path from 'path';
 import * as webpack from 'webpack';
 
-
-
 const configuration: webpack.Configuration = {
-  devtool: 'cheap-eval-source-map',
+  devtool: 'eval',
   entry: [
-    'webpack-dev-server/client?http://0.0.0.0:3000',
-    'webpack/hot/only-dev-server',
     'react-hot-loader/patch',
+    'webpack-dev-server/client?http://localhost:3000',
+    'webpack/hot/only-dev-server',
     './src/index.tsx',
   ],
   output: {
     filename: 'bundle.js',
     path: path.join(__dirname, '../dist'),
     publicPath: '/static/',
+  },
+  devServer: {
+    hot: true,
+    contentBase: path.join(__dirname, '../dist'),
+    publicPath: '/static/',
+    port: 3000,
+    historyApiFallback: true,
+    stats: {
+      'colors': true,
+      'chunks': false,
+      'errors-only': false,
+    },
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
@@ -31,18 +41,22 @@ const configuration: webpack.Configuration = {
   module: {
     rules: [
       {
+          enforce: 'pre',
+          test: /\.ts(x?)$/,
+          use: 'source-map-loader',
+          exclude: '/node_modules/',
+      },
+      {
         test: /\.scss$/,
         use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader'],
       },
       {
-        test: /\.tsx$/,
+        test: /\.ts(x?)$/,
         include: path.join(__dirname, '../src'),
-        use: ['awesome-typescript-loader'],
-      },
-      {
-        test: /\.ts$/,
-        include: path.join(__dirname, '../src'),
-        use: ['awesome-typescript-loader'],
+        use: [
+            { loader: 'react-hot-loader/webpack' },
+            { loader: 'awesome-typescript-loader' },
+        ],
       },
       {
         test: /\.json$/,
@@ -55,7 +69,7 @@ const configuration: webpack.Configuration = {
     ],
   },
   resolve: {
-    extensions: ['*', '.ts', '.tsx', '.json', '.', '.js', '.jsx'],
+    extensions: ['*', '.ts', '.tsx', '.json', '.', '.js', '.jsx'],  // the js extensions are necessary for webpack
   },
 };
 

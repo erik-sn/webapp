@@ -1,4 +1,4 @@
-/* tslint disable */
+/* tslint:disable */
 require('dotenv').config({ path: '../.env'});
 
 import * as autoprefixer from 'autoprefixer';
@@ -22,8 +22,8 @@ const configuration: webpack.Configuration = {
     './src/index.tsx',
   ],
   output: {
-    path: path.join(__dirname, outputPath),
     filename: 'bundle.min.js',
+    path: path.join(__dirname, outputPath),
     publicPath: '/dist/',
   },
   plugins: [
@@ -33,13 +33,13 @@ const configuration: webpack.Configuration = {
       },
     }),
     new ExtractTextPlugin({
-      filename: '/bundle.min.css',
       allChunks: true,
+      filename: '/bundle.min.css',
     }),
     new webpack.optimize.UglifyJsPlugin({
       compress: {
-        warnings: false,
         drop_console: true,
+        warnings: false,
       },
     }),
     new webpack.LoaderOptionsPlugin({ options: { postcss: [ autoprefixer ] } }),
