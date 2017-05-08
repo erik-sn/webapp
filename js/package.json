@@ -12,8 +12,8 @@
     "cover": "jest --coverage",
     "lint": "eslint --fix --ext .js src",
     "compile": "babel src --out-dir dist",
-    "prebuild": "npm run lint && npm run test && npm run compile",
     "build": "webpack --config ./config/webpack.production.config.js --progress --profile --colors",
+    "production": "npm run lint && npm run test && npm run compile && npm run build",
     "prestart": "babel ./config/server.production.js --out-file ./config/server.final.js",
     "start": "node ./config/server.final.js"
   },

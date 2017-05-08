@@ -71,6 +71,7 @@ server.listen(PORT);
  * Takes a react rendering in string format and returns a full html page.
  *
  * @param {string} html - react component to be rendered
+ * @param {string} version - application version from package.json
  * @return {string} full html page
  */
 function renderFullPage(html: string): string {
