@@ -4,7 +4,7 @@
         "sourceMap": true,
         "noImplicitAny": true,
         "module": "commonjs",
-        "moduleResolution": "classic",
+        "moduleResolution": "Node",
         "target": "es5",
         "lib": ["es5", "es6", "dom"], 
         "jsx": "react",

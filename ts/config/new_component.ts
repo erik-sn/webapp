@@ -124,5 +124,7 @@ if (fs.existsSync(filePath)) {
   throw Error(`This component already exists at this path: ${filePath}`);
 }
 
-fs.writeFile(`${dir}/${componentName}.tsx`, generateComponent(componentType, componentName));
+fs.writeFile(`${dir}/${componentName}.tsx`, generateComponent(componentType, componentName), (error: any) => {
+  console.error(error);
+});
 console.info(`Successfully created component: '${componentName}.tsx'`);

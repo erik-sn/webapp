@@ -20,6 +20,16 @@ let server: any;
 const app = express(); // delcare application
 const PORT = process.env.PORT || 4000;
 
+// load the application version from package.json
+let VERSION: string;
+try {
+  // case when in development
+  VERSION = require('../package.json').version;
+} catch (e) {
+  // case when in production
+  VERSION = require('../../package.json').version;
+}
+
 app.use(compression()); // compress compatible files for quicker client load time
 app.use(logger('dev')); // log content
 
@@ -45,7 +55,7 @@ app.use('/', (req: any, res: any) => {
       res.end();
     } else {
       res.header('Content-Type', 'text/html; charset=utf-8');
-      res.write(renderFullPage(html));
+      res.write(renderFullPage(html, VERSION));
       res.end();
     }
 });
@@ -71,22 +81,22 @@ server.listen(PORT);
  * Takes a react rendering in string format and returns a full html page.
  *
  * @param {string} html - react component to be rendered
- * @param {string} version - application version from package.json
+ * @param {string} appVersion - application version from package.json
  * @return {string} full html page
  */
-function renderFullPage(html: string): string {
+function renderFullPage(html: string, appVersion: string): string {
   return `
     <!doctype html>
     <html>
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
       <head>
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-        <link rel="stylesheet" href="/static/bundle.min..css">
+        <link rel="stylesheet" href="/static/bundle.min.${appVersion}.css">
       </head>
       <body id="app-body">
         <div id="app-container">${html}</div>
       </body>
-      <script src="/static/bundle.min.js"></script>
+      <script src="/static/bundle.${appVersion}.min.js"></script>
     </html>
   `;
 }

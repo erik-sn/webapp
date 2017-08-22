@@ -1,6 +1,6 @@
 // tslint:disable:no-string-literal
 import * as chai from 'chai';
-import * as jsdom from 'jsdom';
+import { JSDOM } from 'jsdom';
 import * as  React from 'react';
 import { Provider } from 'react-redux';
 import { applyMiddleware, createStore } from 'redux';
@@ -12,12 +12,13 @@ class Dictionary<TValue> {
     [index: string]: TValue;
 }
 
+
 // jsdom configuration
 declare const global: any;
-const doc = jsdom.jsdom('<!doctype html><html><body></body></html>');
-const window = doc.defaultView;
-global['document'] = doc;
+const jsdom = new JSDOM('<!doctype html><html><body></body></html>');
+const { window } = jsdom
 global['window'] = window;
+global['document'] = window.document;
 global['window'].localStorage = storageMock();
 global['navigator'] = {userAgent: 'node.js'};
 global['HTMLElement'] = global['window'].HTMLElement;
