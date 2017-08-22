@@ -1,0 +1,31 @@
+version: '2'
+services:
+  db:
+    image: postgres
+    volumes:
+      - postgres_app:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    env_file:
+      - .env
+  api:
+    build: .
+    command: bash -c "python manage.py migrate && gunicorn --workers=3 --timeout=120 -k gevent --log-level=DEBUG config.wsgi -b 0.0.0.0:8000"
+    volumes:
+      - .:/project
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    env_file:
+      - .env
+  app:
+    restart: always
+    build: ./ts
+    command: npm run start
+    ports:
+      - "4000:4000"
+    depends_on:
+      - api
+volumes:
+  postgres_app:
