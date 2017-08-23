@@ -1,5 +1,9 @@
+FROM node:6.10.0
 
-FROM kkarczmarczyk/node-yarn
+# Prepare app directory
+RUN mkdir -p /app
+WORKDIR /app
+ADD . /app
 
 # Install dependencies
 RUN yarn

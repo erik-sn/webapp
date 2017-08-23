@@ -10,21 +10,33 @@ services:
       - .env
   api:
     build: .
-    command: bash -c "python manage.py migrate && gunicorn --workers=3 --timeout=120 -k gevent --log-level=DEBUG config.wsgi -b 0.0.0.0:8000"
+    command: bash -c "echo yes | python manage.py collectstatic && python manage.py makemigrations && python manage.py migrate && gunicorn --workers=3 --timeout=120 -k gevent --log-level=DEBUG config.wsgi -b 0.0.0.0:8000"
     volumes:
       - .:/project
-    ports:
-      - "8000:8000"
+    expose:
+      - "8000"
     depends_on:
       - db
     env_file:
       - .env
   app:
     restart: always
-    build: ./ts
-    command: npm run start
+    build: ./app/
+    command: bash -c "npm run start"
     ports:
       - "4000:4000"
+    depends_on:
+      - api
+    env_file:
+      - .env
+  nginx:
+    image: nginx:latest
+    ports: 
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx:/etc/nginx/conf.d
+      - .:/project
     depends_on:
       - api
 volumes:

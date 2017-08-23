@@ -1,0 +1,5 @@
+2017/08/23 01:31:45 [emerg] 1#1: unknown directive "access_log:" in /etc/nginx/conf.d/django.conf:12
+2017/08/23 01:32:07 [emerg] 1#1: unknown directive "access_log:" in /etc/nginx/conf.d/django.conf:13
+2017/08/23 01:32:24 [emerg] 1#1: unknown directive "access_log:" in /etc/nginx/conf.d/django.conf:13
+2017/08/23 01:32:44 [emerg] 1#1: unknown directive "access_log:" in /etc/nginx/conf.d/django.conf:10
+2017/08/23 01:33:57 [emerg] 1#1: unknown directive "access_log:" in /etc/nginx/conf.d/django.conf:6

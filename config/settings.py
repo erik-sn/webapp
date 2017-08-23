@@ -29,7 +29,7 @@ DEBUG = bool(os.environ.get('DEBUG', False))
 # this application from express.js or django
 SERVER_TYPE = os.environ.get('SERVER', 'NODE')
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -135,6 +135,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 STATIC_URL = '/static/'
+STATIC_ROOT = '../static/'
 
 # Cross Origin Resource Sharing https://github.com/ottoyiu/django-cors-headers
 CORS_ORIGIN_ALLOW_ALL = True

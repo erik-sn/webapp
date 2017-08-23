@@ -1,5 +1,5 @@
 /* tslint:disable */
-require('dotenv').config({ path: '../.env'});
+require('dotenv').config({ path: '../../.env'});
 
 import * as autoprefixer from 'autoprefixer';
 import * as ExtractTextPlugin from 'extract-text-webpack-plugin';
@@ -11,10 +11,7 @@ const packageJson: any = require('../package.json');
 // if the application is being served through express.js &
 // server side rendering, place in dist folder. If it is being
 // served through Django, place it in the api app/static folder
-let outputPath = '../dist';
-if (process.env.SERVER.toUpperCase() === 'DJANGO') {
-  outputPath = '../../api/static/api';
-}
+let outputPath = '../../static';
 
 const configuration: webpack.Configuration = {
   devtool: 'source-map',
