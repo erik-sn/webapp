@@ -96,7 +96,7 @@ function renderFullPage(html: string, appVersion: string): string {
       <body id="app-body">
         <div id="app-container">${html}</div>
       </body>
-      <script src="/static/bundle.${appVersion}.min.js"></script>
+      <script src="/static/bundle.min.${appVersion}.js"></script>
     </html>
   `;
 }

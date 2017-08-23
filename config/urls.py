@@ -5,7 +5,7 @@ from django.contrib import admin
 from api.views import index
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
+    url(r'^api/admin/', admin.site.urls),
     url(r'^api/', include('api.urls')),
 ]
 

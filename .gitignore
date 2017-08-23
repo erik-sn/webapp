@@ -25,3 +25,6 @@ htmlcov
 
 ;; database
 db.sqlite3
+
+;; nginx
+nginx/logs
