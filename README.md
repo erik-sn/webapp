@@ -13,6 +13,12 @@ Then environment file should have the following keys:
 # application settings
 SERVER=**server type** # either NODE or DJANGO - see note (1)
 
+# database settings - postgres image will create a server based on these
+POSTGRES_USER=**user**
+POSTGRES_PASSWORD=**password**
+POSTGRES_DB=**database name**
+POSTGRES_PORT=**database port**
+
 # django settings
 SECRET_KEY=**Django Secret Key**
 DEBUG=True
