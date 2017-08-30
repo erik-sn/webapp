@@ -29,13 +29,12 @@ DATABASE_URL=**optional url** # database url location - see note (2)
 ###### Notes
     1. this value must either be 'NODE' or 'DJANGO'.
 
-        If 'NODE' then the
-        build process of the front end applications places the JS/CSS bundles
-        in the front end `/dist` folder. This is designed to be the case when
-        the express.js `server.production` file is used to serve the application
-        (which can consume the django rest API).
+        If 'NODE' then the build process of the front end applications places the 
+        JS/CSS bundles in the front end `/dist` folder. This is designed to be the
+        case when the express.js `server.production` file is used to serve the
+        application (which can consume the django rest API).
 
-        If 'DJANGO then the front end build process place their JS/CSS in the
+        If 'DJANGO' then the front end build process place their JS/CSS in the
         django static directory. This is designed to the the case when the
         django server is run by itself. This will also direct all non-matching urls
         to the base `index.html` file.
@@ -43,16 +42,34 @@ DATABASE_URL=**optional url** # database url location - see note (2)
     2. If no database url is specified the local sqllite3 file in the root
     directory is used by django. For valid urls see the django-database-url (https://github.com/kennethreitz/dj-database-url) documentation.
 
-### Running Dev Server
+### Running Development Servers
 
 ```bash
+# using docker
 docker-compose -f dev.yml up
+```
+
+or start the dev servers manually:
+
+```bash
+# react dev server
+cd app
+yarn
+npm run dev
+```
+
+```bash
+# django dev server
+virtualenv venv
+source venv/bin/activate
+pip install -r requirements.txt
+python manage.py runserver
 ```
 
 Then visit `http://localhost:3000` for the react dev server and `http://localhost:8000/api` to
 access the Django api server
 
-### Running Production server
+### Running Production servers
 
 There are two choices for running the application. The first is running it as
 just a Django application (`SERVER=DJANGO` in the .env file). Front-end bundles
@@ -69,6 +86,7 @@ run inside Docker using:
 docker-compose up
 ```
 
+
 ### Application Details
 
 ##### Back End
@@ -83,7 +101,7 @@ Features enabled by default:
 
 ##### Front End
 
-This application contains two versions of the same React application: one in JavaScript and the other in TypeScript. Unless specified
+This application contains two versions of the same React application: one in JavaScript and the other in TypeScript. By default the TypeScript version is used (in the app folder). If you would like to use the ES6/7 JavaScript version simply remove the existing `app` folder and rename the js folder to `app`. Unless specified
 below these applications should behave in the exact same way (including npm scripts). More detailed information on the repositories
 can be found in readmes inside their respective directories.
 

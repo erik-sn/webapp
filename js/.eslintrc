@@ -1,0 +1,16 @@
+{
+    "extends": "airbnb",
+    "rules": {
+        "jsx-a11y/href-no-hash": "off",
+        "jsx-a11y/anchor-is-valid": ["warn", { "aspects": ["invalidHref"] }],
+        "react/prop-types": 0,
+        "react/jsx-filename-extension": 0,
+        "import/no-extraneous-dependencies": 0,
+        "no-underscore-dangle": ["error", { "allow": ["__REDUX_DEVTOOLS_EXTENSION__"] }]
+    },
+    "env": {
+        "mocha": true,
+        "node": true,
+        "browser": true
+    }
+}

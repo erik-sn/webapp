@@ -1,31 +1,30 @@
-/* tslint:disable */
-require('dotenv').config({ path: '../.env'});
+/* eslint-disable */
+require('dotenv').config({ path: '../.env' });
 
-import * as autoprefixer from 'autoprefixer';
-import * as ExtractTextPlugin from 'extract-text-webpack-plugin';
-import * as path from 'path';
-import * as webpack from 'webpack';
+const autoprefixer = require('autoprefixer');
+const path = require('path');
+const webpack = require('webpack');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-
-const version: string = require('../package.json').version;
+const version = require('../package.json').version;
 
 // if the application is being served through express.js &
 // server side rendering, place in dist folder. If it is being
 // served through Django, place it in the api app/static folder
-console.log(process.env);
 let outputPath = '../dist';
 if (process.env.SERVER.toUpperCase() === 'DJANGO') {
   outputPath = '../../api/static/api';
 }
 
-const configuration: webpack.Configuration = {
+module.exports = {
   devtool: 'source-map',
   entry: [
-    './src/index.tsx',
+    './src/index.js',
   ],
   output: {
-    filename: `bundle.min.${version}.js`,
     path: path.join(__dirname, outputPath),
+    filename: `bundle.min.${version}.js`,
     publicPath: '/dist/',
   },
   plugins: [
@@ -35,17 +34,17 @@ const configuration: webpack.Configuration = {
       },
     }),
     new ExtractTextPlugin({
-      allChunks: true,
       filename: `/bundle.min.${version}.css`,
+      allChunks: true,
     }),
     new webpack.optimize.UglifyJsPlugin({
       compress: {
-        drop_console: true,
         warnings: false,
+        drop_console: true,
       },
     }),
-    new webpack.LoaderOptionsPlugin({ options: { postcss: [ autoprefixer ] } }),
-    new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /en/),
+    new webpack.LoaderOptionsPlugin({ options: { postcss: [autoprefixer] } }),
+    new webpack.ContextReplacementPlugin(/moment[/\\]locale$/, /en/),
     // new BundleAnalyzerPlugin(),
   ],
   module: {
@@ -64,9 +63,9 @@ const configuration: webpack.Configuration = {
         use: 'file-loader?name=[name].[ext]',
       },
       {
-        test: /\.ts$|\.tsx$/,
-        use: ['awesome-typescript-loader'],
+        test: /\.js$/,
         include: path.join(__dirname, '../src'),
+        use: ['babel-loader'],
       },
       {
         test: /\.json$/,
@@ -75,8 +74,6 @@ const configuration: webpack.Configuration = {
     ],
   },
   resolve: {
-    extensions: ['.webpack.js', '.web.js', '.js', '.ts', '.tsx', '.json'],
+    extensions: ['*', '.json', '.', '.js'],
   },
 };
-
-export default configuration;
