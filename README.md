@@ -37,7 +37,16 @@ DATABASE_URL=**optional url** # database url location - see note (2)
     2. If no database url is specified the local sqllite3 file in the root
     directory is used by django. For valid urls see the django-database-url (https://github.com/kennethreitz/dj-database-url) documentation.
 
-### Running Server
+### Running Dev Server
+
+```bash
+docker-compose -f dev.yml up
+```
+
+Then visit `http://localhost:3000` for the react dev server and `http://localhost:8000/api` to
+access the Django api server
+
+### Running Production server
 
 There are two choices for running the application. The first is running it as
 just a Django application (`SERVER=DJANGO` in the .env file). Front-end bundles
@@ -47,8 +56,12 @@ to the base `index.html` which serves the React application.
 The second is hosting both the Django server & the express.js production server.
 This allows for server side rendering in JavaScript. An example deployment
 is running the Django server on port 8000, the express.js on port 4000, and
-using nginx to reverse proxy to them.
+using nginx to reverse proxy to them. This configuration is default and can be
+run inside Docker using:
 
+```bash
+docker-compose up
+```
 
 ### Application Details
 

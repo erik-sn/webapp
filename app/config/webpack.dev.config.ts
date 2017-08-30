@@ -20,6 +20,7 @@ const configuration: webpack.Configuration = {
     hot: true,
     contentBase: path.join(__dirname, '../dist'),
     publicPath: '/static/',
+    host: '0.0.0.0',
     port: 3000,
     historyApiFallback: true,
     stats: {

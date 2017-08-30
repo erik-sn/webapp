@@ -1,0 +1,33 @@
+version: '2'
+services:
+  db:
+    image: postgres
+    volumes:
+      - postgres_app:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    env_file:
+      - .env
+  app:
+    restart: always
+    build: ./app/
+    command: bash -c "npm run dev"
+    ports:
+      - "3000:3000"
+    depends_on:
+      - api
+    env_file:
+      - .env
+  api:
+    build: .
+    command: bash -c "python manage.py runserver 0.0.0.0:8000"
+    volumes:
+      - .:/project
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    env_file:
+      - .env
+volumes:
+  postgres_app:

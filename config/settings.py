@@ -31,7 +31,6 @@ SERVER_TYPE = os.environ.get('SERVER', 'NODE')
 
 ALLOWED_HOSTS = ['*']
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -39,11 +38,11 @@ INSTALLED_APPS = [
     'api',
 
     # third party libraries
+    'debug_toolbar',
     'rest_framework',
     'corsheaders',
-    'debug_toolbar',
 
-
+    # django libraries
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -142,12 +141,21 @@ CORS_ORIGIN_ALLOW_ALL = True
 
 # DRF settings
 REST_FRAMEWORK = {
-    'DEFAULT_RENDERER_CLASSES': (
+    'DEFAULT_RENDERER_CLASSES': [
+        'rest_framework.renderers.JSONRenderer',
+    ],
+}
+
+if DEBUG:
+    REST_FRAMEWORK['DEFAULT_RENDERER_CLASSES'] = [
         'rest_framework.renderers.BrowsableAPIRenderer',
         'rest_framework.renderers.JSONRenderer',
-    ),
-}
+    ]
 
 # needed for django_toolbar
 if DEBUG:
-    INTERNAL_IPS = ('127.0.0.1', '192.168.0.1',)
+    import socket
+    import os
+    # required for running inside docker container
+    ip = socket.gethostbyname(socket.gethostname())
+    INTERNAL_IPS = ('localhost', '0.0.0.0', '127.0.0.1', '172.18.0.1', ip[:-1] + '1')
