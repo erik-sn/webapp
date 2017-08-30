@@ -1,9 +1,0 @@
-node_modules
-*.log
-dist
-config/server.final.js
-coverage
-
-
-.idea
-.vscode
